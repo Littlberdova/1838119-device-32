@@ -27,7 +27,7 @@
                 <ul class="under-navigation-list">
                     <li class="under-navigation-item">
                         <a class="under-navigation-link navigation-link-current" href="#"> Каталог товаров</a>
-                        <button name="go-to-goodspage" type="button"> <span class="visually-hidden"> Расскрыть католог
+                        <button name="go-to-goodspage" type="button"> <span class="visually-hidden"> Раскрыть католог
                                 товаров
                             </span></button>
                     </li>
@@ -43,12 +43,14 @@
         <h1 class="visually-hidden">Каталог продукции компании Device</h1>
         <header class="inner-header">
             <h1 class="inner-header-title"> Моноподы для селфи </h1>
-            <ol class="links-onthepage-list">
+            <nav>
+            <ul class="links-onthepage-list">
                 <li class="links-onthepage-item"> <a class="links-onthepage-link" href="index.html"> Главная </a></li>
                 <li class="links-onthepage-item"> <a class="links-onthepage-link" href="#"> Каталог товаров </a></li>
                 <li class="links-onthepage-item"> <a class="links-onthepage-link navigation-link-current"
                         href="catalog.html"> Моноподы для селфи </a></li>
-            </ol>
+                </ul>           
+            </nav>
         </header>
 
         <section class="catalog-filter-section">
@@ -97,9 +99,9 @@
                 <select class="select-control" id="sorting" name="sorting">
                     <option value="popular"> Сначала популярные </option>
                 </select>
-                <button class="button-up" type="button"> <span class="visually-hidden">Наверх каталога</span></button>
-                <button class="button-down" type="button"> <span class="visually-hidden">Вниз каталога</span></button>
-            </form>
+             </form>>   
+                <button class="button-ascending" type="button"> <span class="visually-hidden"> По возрастанию </span></button>
+                <button class="button-descending" type="button"> <span class="visually-hidden">По убыванию</span></button>
         </section>
         <section class="product-cards-section">
             <h2 class="visually-hidden"> Карточки товаров </h2>
@@ -110,6 +112,7 @@
                         <h3 class="product-card-title"> Любительская селфи-палка</h3>
                     </a>
                     <span class="product-card-price"> 500 ₽</span>
+                    <a class="more-about-product" href="#"> Подробнее </a>
                 </li>
                 <li class="product-card">
                     <a class="product-card-link" href="#">
@@ -117,6 +120,7 @@
                         <h3 class="product-card-title"> Профессиональная селфи-палка </h3>
                     </a>
                     <span class="product-card-price"> 1 500 ₽</span>
+                    <a class="more-about-product" href="#"> Подробнее </a>
                 </li>
                 <li class="product-card">
                     <a class="product-card-link" href="#">
@@ -124,6 +128,7 @@
                         <h3 class="product-card-title"> Непотопляемая селфи-палка</h3>
                     </a>
                     <span class="product-card-price"> 2 500 ₽</span>
+                    <a class="more-about-product" href="#"> Подробнее </a>
                 </li>
                 <li class="product-card">
                     <a class="product-card-link" href="#">
@@ -131,6 +136,7 @@
                         <h3 class="product-card-title"> Селфи-палка «Следуй за мной» </h3>
                     </a>
                     <span class="product-card-price"> 4 900 ₽</span>
+                    <a class="more-about-product" href="#"> Подробнее </a>
                 </li>
             </ul>
             <button class="button-show-more" type="button"> Загрузить еще </button>
