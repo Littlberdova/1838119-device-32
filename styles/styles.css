@@ -30,8 +30,6 @@
     font-display: swap;
 }
 
-
-
 body {
     font-family:"Rubik", sans-serif;
     font-weight: 400;
@@ -43,14 +41,11 @@ body {
 }
 
 header {
-background-color: #FFE17F;
-;
+    background-color: #FFE17F;
 }
 
-
-
 .subcribe {
-background-color: #F0F0F0;
+    background-color: #F0F0F0;
 }
 
 footer {
@@ -75,7 +70,7 @@ footer {
     text-decoration: none;
 }
 
-p b {
+.emphasise {
     font-family:"Raleway", sans-serif;
     font-weight: 800;
     font-style: normal;
@@ -104,20 +99,20 @@ p b {
 }
 
 .numerical-value {
-font-family: "Rubik", sans-serif;
-font-weight: 400;
-font-style: normal;
-font-size: 36px;
-line-height: 30px;
-color: #000000;
+    font-family: "Rubik", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 36px;
+    line-height: 30px;
+    color: #000000;
 }
 
 .row-name {
-font-family: "Rubik", sans-serif;
-font-weight: 400;
-font-style: normal;
-font-size: 16px;
-line-height: 30px;
+    font-family: "Rubik", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 30px;
 }
 
 .button {
@@ -163,7 +158,7 @@ address {
 }
 
 .visually-hidden {
-display: none;
+    display: none;
 }
 
 .virtual-reality {
@@ -193,7 +188,6 @@ display: none;
     height: 160px;
 }
 
-
 .fitnes-watch {
     background-color: #FFE17F;
     background-image: url("../img/catalog-item/fitness-bracelet-item.png");
@@ -211,6 +205,7 @@ display: none;
     width: 160px;
     height: 160px;
 }
+
 .quadrico {
     background-color: #FFE17F;
     background-image: url("../img/catalog-item/quadrico-item.png");
@@ -221,22 +216,24 @@ display: none;
 }
 
 .delivery-item {
-background-image: url("../img/delivery.svg");
-background-repeat: no-repeat;
-width: 136px;
-height: 164px;
+    background-image: url("../img/delivery.svg");
+    background-repeat: no-repeat;
+    width: 136px;
+    height: 164px;
 }
+
 .garanty-item {
-background-image: url("../img/garanty.svg");
-background-repeat: no-repeat;
-width: 171px;
-height: 195px;
+    background-image: url("../img/garanty.svg");
+    background-repeat: no-repeat;
+    width: 171px;
+    height: 195px;
 }
+
 .credit-item {
-background-image: url("../img/credit.svg");
-background-repeat: no-repeat;
-width: 156px;
-height: 188px;
+    background-image: url("../img/credit.svg");
+    background-repeat: no-repeat;
+    width: 156px;
+    height: 188px;
 }
 
 .img:hover {
@@ -244,12 +241,12 @@ height: 188px;
 }
 
 .car-item {
-background-color: #FFE17F;
-background-image: url("../img/car-item.svg");
-background-repeat: no-repeat;
-background-position: 50% 50%;
-width: 47px;
-height: 31px;
+    background-color: #FFE17F;
+    background-image: url("../img/car-item.svg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    width: 47px;
+    height: 31px;
 }
 
 .more-information {
@@ -260,7 +257,7 @@ height: 31px;
 }
 
 footer {
- color: #FFFFFF;
+    color: #FFFFFF;
 }
 
 .footer-address {
@@ -269,11 +266,12 @@ footer {
 }
 
 .footer-contact-phone {
-color: #FFFFFF;
-text-decoration: none;
-font-size: 16px;
-line-height: 30px;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 30px;
 }
+
 .additional-page-link {
     font-family:"Raleway", sans-serif;
     font-weight: 800;
@@ -306,7 +304,7 @@ line-height: 30px;
 }
 
 .inner-header {
-background-color: #FFFFFF;
+    background-color: #FFFFFF;
 }
 
 .catalog-filter-section {
@@ -349,6 +347,7 @@ background-color: #FFFFFF;
     color: #000000;
     text-decoration: none;
 }
+
 .product-card-price {
     font-size: 18px;
     line-height: 22px;
@@ -376,4 +375,3 @@ background-color: #FFFFFF;
     background-color: #EBEBEB;
 }
 
-/* Не получается создать пулреквест */
