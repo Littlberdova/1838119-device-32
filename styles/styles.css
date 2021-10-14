@@ -78,12 +78,6 @@ body {
     padding:0;
 }
 
-/* Когда пытаюсь отодвинуть все элементы от "Поиска по сайту", все остальные флекс-элементы схлопываются. Не понимаю, почему так
-.user-navigation {
-    margin-left: auto;
-}
-*/
-
 .under-navigation-list {
     display: flex;
     width: 1041px;
@@ -103,10 +97,12 @@ body {
     width: 560px;
 }
 
-/* Почему-то между флекс-элементами во флексе product-slide не появляется отступ между элементами в 40 пикселей, ширину у контейнера и элементов задала, задала space-between. Но проверяю по Computed, отступа нет.*/
-.page-container-1 {
+
+.page-container {
     width: 1160px;
     margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
 }
 
 .goods-catalog-list {
@@ -122,8 +118,7 @@ body {
     width: 160px;
 }
 
-.page-container-3 {
-    display:flex;
+.switch-container {
     width: 1094px;
     margin-left:140px;
     margin-right: 206px;
@@ -140,11 +135,8 @@ body {
     width: 814px;
 }
 
-.page-container-4 {
-    display: flex;
-    justify-content: space-between;
+.information-container {
     width: 1140px;
-    margin: 0 auto;
 }
 
 .about-us {
@@ -166,15 +158,12 @@ body {
     text-align: center;
 }
 
-.page-container-5 {
-    flex: display;
-    flex-direction: row; /*Не понимаю, почему не получается флекс-элементы по главной оси расположить, выстраиваются столбиком*/
-    flex-wrap: nowrap;
-    width: 1160px;
-    margin: 0 auto;
+.subcribe-container {
+    flex-direction: row; 
+    flex-wrap: wrap;
 }
 
-.page-container-5-item{
+.subcribe-container-item {
     width: 560px;
 }
 
@@ -579,11 +568,14 @@ footer {
 }
 
 .pagination-item {
-    padding: 0;
+    padding: 30;
+    flex-shrink: 0;
 }
 
-.pagination-number {
-    display: flex;
-    width: 145px;
-    justify-content: space-between;
+.pagination-prev {
+    margin-right: auto;
+}
+
+.pagination-next {
+    margin-left: auto;
 }
