@@ -56,7 +56,7 @@ body {
     display:flex;
     flex-direction: column;
     width: 1160px;
-    margin-top: 17px;
+    margin-top: 40px;
     margin-left: auto;
     margin-right: auto;
     background-color: #FFE17F;
@@ -64,13 +64,34 @@ body {
 
 .upper-navigation-list {
     display: flex;
+    flex-wrap: wrap;
+    margin-left: 96px;
+    margin-right: 25px;
+    margin-bottom: 49px;
+    padding: 0;
     width: 1075px;
     justify-content: space-between;
+    list-style-type: none;
 }
 
-.upper-navigation-item {
-    margin: 0;
-    padding:0;
+.search {
+    width: 200px;
+    margin-left: 49px;
+}
+
+.enter {
+    margin-right: 25px;
+}
+
+.compare {
+    width: 120px;
+    margin-right: 14px;;
+}
+
+.upper-navigation-link{
+    display: block;
+    padding: 10px;
+    width: 220px;
 }
 
 .under-navigation-item {
@@ -82,9 +103,28 @@ body {
     display: flex;
     width: 1041px;
     justify-content: space-between;
-    margin:0 auto;
+    margin-left: 60px;
+    margin-bottom: 123px;
+    margin-right: 59px;
+    list-style-type: none;
 }
 
+.under-navigation-link{
+    display: block;
+    padding: 15px 0;
+}
+
+.catalog {
+    margin-right: 304px;
+}
+
+.delivery {
+    margin-right: 19px;
+}
+
+.garanty {
+    margin-right: 62px;
+}
 
 .product-slide {
     display:flex;
@@ -97,6 +137,58 @@ body {
     width: 560px;
 }
 
+.slider-image {
+    margin-right: 40px;
+}
+
+.emphasise {
+    padding: 0;
+    margin-top: 0;
+    margin-bottom:19px;
+}
+
+.description {
+    padding:0;
+    margin-top:0;
+    margin-bottom: 30px;
+    width: 560px;
+}
+
+.more-detailed {
+    margin-top:0;
+    margin-bottom: 70px;
+}
+
+.features {
+    width: 360px;
+}
+
+.numerical-value {
+    display: block;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 13px; 
+}
+.row-name {
+    display: block;
+    padding:0;
+    margin-top: 0;
+    margin-bottom: 109px; 
+}
+
+.metre-value {
+    margin-right: 57px; /* Почему-то не применяется*/
+}
+
+.goods-catalog-item {
+    margin-top: 0;
+    margin-bottom: 33px;
+    margin-right: 40px;
+}
+
+.goods-catalog-item:last-child {
+    margin-right: 0;
+}
 
 .page-container {
     width: 1160px;
@@ -109,8 +201,10 @@ body {
     display: flex;
     justify-content: space-between;
     width: 1160px;
-    margin: 0;
+    margin-top: 0;
+    margin-bottom: 139px;
     padding: 0;
+    list-style-type: none;
 }
 
 
@@ -133,6 +227,85 @@ body {
 
 .service-slider {
     width: 814px;
+}
+
+.slider-header {
+    padding: 0;
+    margin-top:0;
+    margin-bottom: 14px;
+}
+
+.slider-description {
+    margin-top: 0;
+    margin-bottom: 69px;
+    margin-right: 61px;
+}
+
+.additional-services {
+    margin-bottom: 90px;
+}
+
+.main-feature {
+    margin-top:0;
+    margin-bottom: 146px; /*Почему-то не применяется*/
+}
+
+.section-header {
+    margin-top: 0;
+    margin-bottom: 26px;
+}
+
+.paragraph-first {
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.paragraph {
+    margin-top:0;
+    margin-bottom: 60px;
+}
+
+.delivery-companies-list {
+    padding: 0;
+    margin-top:0;
+    margin-bottom: 52px;
+}
+
+.contact-paragraph {
+    margin-top: 0;
+    margin-bottom: 30px;
+
+}
+
+.mini-section-header {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.main-page-address {
+    margin-top:0;
+    margin-bottom: 30px;
+}
+
+.work-day-time {
+    margin-top:0;
+    margin-bottom: 67px;
+}
+
+.contact {
+    margin-top:0;
+    margin-bottom: 87px; /* Кнопка "Напишите нам все равно прижата к низу раздела, не могу понять почему =("*/
+}
+
+.subcribe-header {
+    margin-top: 75px;
+    margin-right: 40px;
+    margin-bottom: 53px;
+}
+
+.subcribe-description {
+    margin-top: 86px;
+    margin-bottom: 50px;
 }
 
 .information-container {
@@ -161,6 +334,8 @@ body {
 .subcribe-container {
     flex-direction: row; 
     flex-wrap: wrap;
+    margin-left: 140px;
+    margin-bottom: 134px;
 }
 
 .subcribe-container-item {
@@ -171,6 +346,13 @@ body {
     margin: 0 auto;
     display: flex;
     justify-content: space-around;
+}
+
+.yellow-logo {
+    margin-top: 62px;
+    margin-left: 138px;
+
+    margin-bottom: 35px
 }
 
 .subcribe {
@@ -287,7 +469,14 @@ address {
 }
 
 .visually-hidden {
-    display: none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
 }
 
 .virtual-reality {
@@ -390,18 +579,43 @@ footer {
 }
 
 .footer-address {
+    width: 238px;
     font-size: 16px;
     line-height: 19px;
+    margin-top: 0;
+    margin-left: 139px;
+    margin-right: 114px;
+    margin-bottom: 150px;
+}
+
+.additional-page-list {
+    width: 458px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin-left: 0;
+    margin-right: 58px;
+    margin-bottom: 63px;
+    margin-top: 137px;
+    list-style-type: none;
 }
 
 .footer-contact-phone {
+    min-width: 293px;
     color: #FFFFFF;
+    display: block;
     text-decoration: none;
     font-size: 16px;
     line-height: 30px;
+    margin-top: 133px;
+    margin-left: 0;
+    margin-right: 140px;
+    margin-bottom: 53px;
+
 }
 
 .additional-page-link {
+    padding: 5px;
     font-family:"Raleway", sans-serif;
     font-weight: 800;
     font-style: normal;
@@ -410,6 +624,33 @@ footer {
     color: #FFFFFF;
     text-decoration: none;
     text-transform: uppercase;
+}
+
+.additional-page-item {
+    flex-shrink: 0; 
+    margin-right: 7px; /*Почему-то задаю margin , а отступы все равно больше, чем надо*/
+}
+
+.additional-page-item:last-child {
+    margin-right: 7px;
+}
+
+.socialmedia-list  {
+    list-style-type: none;
+    display: flex; /*Не понимаю, почему не применяется флекс к списку*/
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 61px;
+    margin-left: 0;
+    margin-right: 392px;
+}
+
+.htmlacademy-logo {
+    display: block;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 139px; /*Не применяются отступы*/
+    margin-bottom: 64px; 
 }
 
 .main-feature b {
@@ -423,6 +664,8 @@ footer {
     font-size: 50px;
     line-height: 50px;
     color: #000000;
+    margin-top: 37px;
+    margin-bottom: 14px;
 }
 
 .links-onthepage-link {
@@ -502,6 +745,11 @@ footer {
 
 .page-pagination {
     background-color: #EBEBEB;
+    list-style-type: none;
+    padding-left: 29px;
+    padding-right: 30px;
+    padding-top: 27px;
+    padding-bottom: 24px;
 }
 
 /* Сетка для страницы каталога */
@@ -517,13 +765,44 @@ footer {
 
 .links-onthepage-list {
     display: flex;
-    width: 425px;
     justify-content: space-between;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 49px;
+    list-style-type: none
 }
 
 .links-onthepage-link {
-    padding:0;
+    padding: 5px;
 }
+
+.links-onthepage-item {
+    margin-right: 30px;
+}
+
+.sorting-section {
+    display: flex;
+    padding-left: 72px;
+    padding-right: 140px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #EBEBEB;
+}
+
+.button-ascending {
+    margin-left: auto;
+    width: 19px;
+    margin-right: 19px;
+}
+
+.button-descending {
+    width: 19px;
+}
+
+.select-control {
+    margin-left: 52px;
+}
+
 
 .catalog-container {
     display: flex;
@@ -545,6 +824,8 @@ footer {
     margin-left: 72px;
     margin-right: 140px;
     margin-top: 69px;
+    padding: 0;
+    list-style-type: none;
 }
 
 .product-card {
@@ -568,11 +849,13 @@ footer {
 }
 
 .pagination-item {
-    padding: 30;
+    margin-right: 30px;
     flex-shrink: 0;
+    width: 19px;
 }
 
 .pagination-prev {
+    display: block;
     margin-right: auto;
 }
 

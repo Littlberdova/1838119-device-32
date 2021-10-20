@@ -13,28 +13,28 @@
       <a href="#"> <img src="img/logo.svg" width="145" height="36" alt="Логотип компании"></a>
       <section class="main-upper-navigation">
         <ul class="upper-navigation-list">
-          <li class="navigation-upper-item">
+          <li class="navigation-upper-item search">
             <form action="https://echo.htmlacademy.ru/" method="get">
               <label for="page-search" class="visually-hidden">Поиск по сайту</label>
               <input id="page-search" name="page-search" type=text placeholder="Поиск по сайту">
             </form>
           </li>
-          <li class="upper-navigation-item"> <a class="upper-navigation-link" href="#"> Войти </a></li>
-          <li class="upper-navigation-item"> <a class="upper-navigation-link" href="#"> Сравнить </a></li>
-          <li class="upper-navigation-item"> <a class="upper-navigation-link" href="#"> Корзина </a></li>
+          <li class="upper-navigation-item"> <a class="upper-navigation-link enter" href="#"> Войти </a></li>
+          <li class="upper-navigation-item"> <a class="upper-navigation-link compare" href="#"> Сравнить </a></li>
+          <li class="upper-navigation-item"> <a class="upper-navigation-link cart" href="#"> Корзина </a></li>
         </ul>
       </section>
       <section class="main-under-navigation">
         <ul class="under-navigation-list">
           <li class="under-navigation-item">
-            <a class="under-navigation-link" href="#"> Каталог товаров</a>
+            <a class="under-navigation-link catalog" href="#"> Каталог товаров</a>
             <button class="plus" name="go-to-goodspage" type="button"> <span class="visually-hidden"> Расскрыть католог
                 товаров
               </span></button>
           </li>
-          <li class="under-navigation-item"> <a class="under-navigation-link" href="#">Доставка</a></li>
-          <li class="under-navigation-item"> <a class="under-navigation-link" href="#">Гарантия</a></li>
-          <li class="under-navigation-item"> <a class="under-navigation-link" href="#">Контакты</a> </li>
+          <li class="under-navigation-item"> <a class="under-navigation-link delivery" href="#">Доставка</a></li>
+          <li class="under-navigation-item"> <a class="under-navigation-link garanty" href="#">Гарантия</a></li>
+          <li class="under-navigation-item"> <a class="under-navigation-link contact" href="#">Контакты</a> </li>
         </ul>
       </section>
     </nav>
@@ -54,7 +54,7 @@
               </span></button>
             <div class="slide-description">
               <p> <b class="emphasise"> Порхает как бабочка, жалит как пчела! </b> </p>
-              <p> Этот обычный, на первый взгляд, квадрокоптер оснащен мощным лазером, замаскированным под стандартную
+              <p class="description"> Этот обычный, на первый взгляд, квадрокоптер оснащен мощным лазером, замаскированным под стандартную
                 камеру. </p>
               <a class="button more-detailed" href="#"> Подробнее</a>
               <table class="features">
@@ -91,7 +91,7 @@
               </span></button>
             <div class="slide-description">
               <p> <b class="emphasise"> Худеем правильно! </b> </p>
-              <p> Мотивирующие фитнес-браслеты помогут найти в себе силы не пропускать занятия и соблюдать диету. </p>
+              <p class="description"> Мотивирующие фитнес-браслеты помогут найти в себе силы не пропускать занятия и соблюдать диету. </p>
               <a class="button more-detailed" href="#"> Подробнее</a>
               <table class="features">
                 <caption class="visually-hidden"> Технические характеристики </caption>
@@ -114,7 +114,7 @@
               </span></button>
             <div class="slide-description">
               <p> <b class="emphasise"> Делай селфи,как Бен Стиллер! </b> </p>
-              <p> Самая длинная палка для селфи доступна в нашем магазине. Восемь (Восемь, Карл!) метров длиной и весом
+              <p class="description"> Самая длинная палка для селфи доступна в нашем магазине. Восемь (Восемь, Карл!) метров длиной и весом
                 всего 5 кг. </p>
               <a class="button more-detailed" href="#"> Подробнее</a>
               <table class="features">
@@ -208,8 +208,8 @@
         <div class="page-container information-container">
           <div class="about-us">
             <h3 class="section-header"> О нас </h3>
-            <p>Огромный выбор гаджетов не оставит равнодушным гика, который есть в каждом из нас.</p>
-            <p> Мы можем доставить ваш товар в самые отдалённые уголки России транспортными компаниями:</p>
+            <p class="paragraph-first">Огромный выбор гаджетов не оставит равнодушным гика, который есть в каждом из нас.</p>
+            <p class="paragraph"> Мы можем доставить ваш товар в самые отдалённые уголки России транспортными компаниями:</p>
             <ul class="delivery-companies-list">
               <li class="delivery-company-item"> Меловые линии</li>
               <li class="delivery-company-item"> Сдик</li>
@@ -219,16 +219,16 @@
           </div>
           <div class="contacts">
             <h3 class="section-header"> Контакты </h3>
-            <p>Вы можете забрать товар сами, заехав в наш офис. Заодно, сможете проверить работоспособность покупки.
+            <p class="contact-paragraph">Вы можете забрать товар сами, заехав в наш офис. Заодно, сможете проверить работоспособность покупки.
             </p>
             <h4 class="mini-section-header"> Интернет-магазин «Девайс» </h4>
-            <address>
+            <address class="main-page-address">
               Санкт-Петербург, набережная реки Карповки, 5, литера П.
               <a class="contact-phone" href="tel:88128121212"> +7 (812) 812-12-12 </a>
             </address>
             <h4 class="mini-section-header"> Время работы </h4>
-            <p class="work-day-time">пн—пт: с 10:00 до 22:00 </p>
-            <p class="work-day-time"> сб—вс: с 10:00 до 19:00 </p>
+            <p class="work-day-time">пн—пт: с 10:00 до 22:00  <br>
+             сб—вс: с 10:00 до 19:00 </p>
             <a class="button write-to-us" href="mailto:#"> Напишите нам </a>
           </div>
         </div>
@@ -236,10 +236,10 @@
       <section class="subcribe">
         <div class="page-container subcribe-container">
           <div class="subcribe-container-item">
-            <h3 class="section-header">Подпишитесь на рассылку</h3>
+            <h3 class="section-header subcribe-header">Подпишитесь на рассылку</h3>
           </div>
           <div class="subcribe-container-item">
-            <p>Еженедельный дайджест с обзорами новинок, длительными тест-драйвами, распаковками, а также акции
+            <p class="subcribe-description">Еженедельный дайджест с обзорами новинок, длительными тест-драйвами, распаковками, а также акции
               спецпредложения и вот это вот всё.</p>
           </div>
           <div class="subcribe-container-item">
@@ -257,7 +257,7 @@
   <footer>
     <div class="page-footer-container">
       <div class="first-column">
-        <a href="#"><img src="img/yellow-logo.svg" width="145" height="36" alt="Логотип компании"></a>
+        <a href="#"><img class="yellow-logo" src="img/yellow-logo.svg" width="145" height="36" alt="Логотип компании"></a>
         <section class="main-information">
           <h2 class="visually-hidden">Основная информация</h2>
           <address class="footer-address"> Санкт-Петербург, набережная реки Карповки, 5, литера П.</address>
@@ -284,9 +284,9 @@
       <div class="third-column">
         <section class="additional-information">
           <h2 class="visually-hidden"> Дополнительная информация </h2>
-          <address> <a class="contact-phone footer-contact-phone" href="tel:88128121212"> +7 (812) 812-12-12" </a>
+          <address> <a class="contact-phone footer-contact-phone" href="tel:88128121212"> +7 (812) 812-12-12 </a>
           </address>
-          <a href="https://htmlacademy.ru/"> <img src="img/htmlacademy-logo.svg" width="115" height="33"
+          <a class="htmlacademy-logo" href="https://htmlacademy.ru/"> <img src="img/htmlacademy-logo.svg" width="115" height="33"
               alt="Логотип HTML Академии">
         </section>
       </div>
