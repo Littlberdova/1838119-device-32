@@ -156,9 +156,10 @@ body {
 }
 
 .features {
-    display: grid;
+    display: grid; /*Добавила грид*/
     grid-template-columns: repeat(3,auto);
-    gap: 20px;
+    row-gap: 10px;
+    column-gap: 20px;
 }
 
 .metre-value-1 {
@@ -188,7 +189,7 @@ body {
 
 .name-3 {
     grid-column: 3/4;
-    grid-row: 3/4;  /*Попробовала на первом слайдере расположить гридами, что-то не получается названия опустить на нижнюю колонку. Это я уже к 6 заданий блоку делала*/
+    grid-row: 3/4;  /*Можно ли так реализовать через гриды? Если да, то я переделаю на всех слайдерах*/
 }
 
 .page-container {
@@ -197,7 +198,7 @@ body {
 }
 
 .goods-catalog-list {
-    display: grid;
+    display: grid; /*Добавила грид*/
     grid-template-columns: repeat(6,160px);
     gap: 40px;
     margin-top: 0;
@@ -323,7 +324,7 @@ body {
     width: 1160px;
     background-color:#F0F0F0;
     display: grid;
-    grid-template-columns: 125px 995px 40px; /*Не понимаю, почему в итоге текст ушел в отдельный ряд*/
+    grid-template-columns: 125px 995px 40px; /*Не понимаю, почему в итоге текст ушел в отдельный ряд =(*/
     text-align: center;
     margin-bottom: 97px;
     }
@@ -331,12 +332,12 @@ body {
 .subcribe-container {
     flex-direction: row; 
     align-items: flex-end;
-    margin-bottom: 50px; /* Сначала все получилось, но потом что-то сломалось, и стили не применяются*/
+    margin-bottom: 50px; /* Сначала все получилось, но потом что-то сломалось, и стили не применяются =(*/
 }
 
 .form-container {
     display: flex;
-    flex-wrap: wrap; /*Аналогично и здесь, не понимаю в чем дело*/
+    flex-wrap: wrap; /*Аналогично и здесь, не понимаю в чем дело =(*/
 }
 
 .email-subcribe {
@@ -789,7 +790,6 @@ footer {
     padding-top: 37px;
     padding-bottom: 49px;
     padding-left: 60px;
-    padding-right: 
 }
 
 .links-onthepage-list {
