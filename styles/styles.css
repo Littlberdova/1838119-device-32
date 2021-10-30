@@ -35,6 +35,7 @@ html {
 }
 
 body {
+    margin: 0;
     display:flex;
     flex-direction: column;
     min-height: 100%;
@@ -77,6 +78,7 @@ body {
     padding-left: 60px;
     padding-right: 25px; 
     margin:0;
+    margin-bottom: 15px;
 }
 
 .upper-navigation-link {
@@ -130,22 +132,13 @@ body {
     justify-content: space-between;
 }
 
-.slide-description {
-
-}
-
-.slider-image {
-}
-
-.emphasise {
-    padding: 0;
-    margin-top: 0;
-    margin-bottom: 19px;
+.product-slider {
+    margin-bottom: 70px;
 }
 
 .description {
     padding:0;
-    margin-top:0;
+    margin-top:19px;
     margin-bottom: 30px;
 }
 
@@ -156,40 +149,7 @@ body {
 }
 
 .features {
-    display: grid; /*Добавила грид*/
-    grid-template-columns: repeat(3,auto);
-    row-gap: 10px;
-    column-gap: 20px;
-}
-
-.metre-value-1 {
-    grid-column: 1/2;
-    grid-row: 1/2;
-}
-
-.metre-value-2 {
-    grid-column: 2/3;
-    grid-row: 1/2;
-}
-
-.metre-value-3 {
-    grid-column: 3/4;
-    grid-row: 1/2;
-}
-
-.name-1 {
-    grid-column: 1/2;
-    grid-row: 3/4;
-}
-
-.name-2 {
-    grid-column: 2/3;
-    grid-row: 3/4;
-}
-
-.name-3 {
-    grid-column: 3/4;
-    grid-row: 3/4;  /*Можно ли так реализовать через гриды? Если да, то я переделаю на всех слайдерах*/
+    border-spacing: 20px;
 }
 
 .page-container {
@@ -221,6 +181,11 @@ body {
     margin-bottom: 69px;
 }
 .switch-container {
+    display: grid;
+    grid-template-columns: 280px 814px; /*Получился между рядами gap какой-то (видно в инспекторе), это ширина элементов накладывается друг на друга?*/
+    grid-template-areas: "section-switching service-slider-1"
+                         " .  service-slider-2"
+                         " .  service-slider-3";
     margin-bottom: 90px;
 }
 
@@ -229,25 +194,41 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     width: 280px;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    grid-area: section-switching;
 }
 
 .service-slider {
     width: 814px;
+    padding-top: 54px;
+    padding-bottom: 69px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-.slider-header {
-    padding: 0;
-    margin-top:0;
-    margin-bottom: 14px;
+.service-slider-1 {
+    grid-area: service-slider-1;
+}
+
+.service-slider-2 {
+    grid-area: service-slider-2;
+}
+
+.service-slider-3 {
+    grid-area: service-slider-3;
 }
 
 .slider-description {
-    margin-top: 0;
-    margin-bottom: 69px;
+    margin: 0;
+    width: 497px;
 }
 
 .additional-services {
     margin-bottom: 90px;
+    background-color: #F0F0F0;
 }
 
 .section-header {
@@ -324,37 +305,47 @@ body {
     width: 1160px;
     background-color:#F0F0F0;
     display: grid;
-    grid-template-columns: 125px 995px 40px; /*Не понимаю, почему в итоге текст ушел в отдельный ряд =(*/
-    text-align: center;
+    grid-template-columns: 125px 910px auto; /*Получилось привести к макетному виду, но теперь текст вообще выпал*/
+    grid-template-rows: 100px;
     margin-bottom: 97px;
     }
 
 .subcribe-container {
+    display: flex;
     flex-direction: row; 
+    justify-content: space-between;
     align-items: flex-end;
-    margin-bottom: 50px; /* Сначала все получилось, но потом что-то сломалось, и стили не применяются =(*/
+    margin-bottom: 50px; 
 }
 
 .form-container {
     display: flex;
-    flex-wrap: wrap; /*Аналогично и здесь, не понимаю в чем дело =(*/
+    flex-wrap: wrap;
 }
 
 .email-subcribe {
     width: max-content;
+    flex-grow: 1;
+}
+
+.additional-note {
+    margin: 0;
 }
 
 .subcribe-header {
     width: min-content;
+    margin: 0;
 }
 
 .subcribe-description {
     width: 560px;
+    margin: 0;
 }
 
 .page-footer-container {
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
     padding-top: 62px;
     padding-bottom: 61px;
 }
@@ -379,6 +370,12 @@ footer {
     display: flex;
     flex-direction: column;
     width: auto;
+}
+
+.third-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 .under-navigation-link {
@@ -406,6 +403,8 @@ footer {
     font-size: 50px;
     line-height: 50px;
     color:#000000;
+    padding: 0;
+    margin: 0;
 }
 
 .slider-header {
@@ -415,6 +414,9 @@ footer {
     font-size: 50px;
     line-height: 50px;
     color:#000000;
+    padding: 0;
+    margin-top:0;
+    margin-bottom: 14px;
 }
 
 .goods-catalog-item-link {
@@ -578,6 +580,7 @@ address {
 
 .car-item {
     grid-column: 1/ 2;
+    grid-row: 1/2;
     background-color: #FFE17F;
     background-image: url("../img/car-item.svg");
     background-repeat: no-repeat;
@@ -592,6 +595,7 @@ address {
     background-position: 50% 50%;
     background-repeat: no-repeat;
     grid-column: -1/-2;
+    grid-row: 1/2;
 }
 
 footer {
@@ -612,12 +616,14 @@ footer {
 .additional-page-list {
     width: 458px;
     display: flex;
+    justify-content: space-between;
     padding: 0;
+    margin: 0;
     list-style-type: none;
 }
 
 .footer-contact-phone {
-    min-width: 293px;
+    width:auto;
     margin-bottom: 53px;
     color: #FFFFFF;
     display: block;
@@ -658,9 +664,17 @@ footer {
     margin: 0;
 }
 
-.main-feature b {
+.slogan {
     background-color: #F0F0F0;
+    font-size: 20px;
+    line-height: 24;
+    text-transform: uppercase;
+    font-weight: 800;
+    text-align: center;
+    padding-top: 37px;
+    padding-bottom: 43px;
     grid-column: 2/3;
+    grid-row: 1/2;
 }
 
 .inner-header-title {
@@ -696,6 +710,9 @@ footer {
     font-size: 16px;
     line-height: 19px;
     color: #000000;
+    margin: 0;
+    padding-top: 71px;
+    padding-right: 69px; 
 
 }
 
@@ -707,6 +724,14 @@ footer {
     line-height: 19px;
     color: #000000;
     text-transform: uppercase;
+    margin: 0;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-right: 32px;
+}
+
+form .filter-page-header {
+    padding:0;
 }
 
 .catalog-filter-title {
@@ -714,6 +739,12 @@ footer {
     font-size: 16px;
     line-height: 19px;
     color: #000000;
+}
+
+/*Стилизация форм, как я поняла, делается не в рамках раздела 6*/
+
+.grey-container {
+    background-color: #FFFFFF;
 }
 
 .product-card-link {
@@ -745,6 +776,7 @@ footer {
 .product-card-image {
     padding: 0;
     margin: 0;
+    display: block;
 }
 
 .pagination-link {
