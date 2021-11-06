@@ -67,23 +67,27 @@ body {
     background-color: #FFE17F;
 }
 
+.navigation-container {
+    padding-left: 60px;
+    padding-right: 59px;
+    transform: translateY(-25px);
+}
+
+
 .upper-navigation-list {
     display: flex;
     flex-wrap: wrap;
     padding: 0;
-    width: 1075px;
     list-style-type: none;
     padding-top: 35px;
-    padding-bottom: 29px;
-    padding-left: 60px;
-    padding-right: 25px; 
+    padding-bottom: 44px;
     margin:0;
-    margin-bottom: 15px;
 }
 
 .upper-navigation-link {
     width: min-content;
     padding: 10px;
+    padding-left:0;
 }
 
 .enter {
@@ -105,8 +109,6 @@ body {
     list-style-type: none;
     padding-top: 0;
     padding-bottom: 152px;
-    padding-left: 60px;
-    padding-right: 59px;
     margin: 0;
 }
 
@@ -148,8 +150,21 @@ body {
     margin-bottom: 70px;
 }
 
+.slide-description .button:hover {
+    background-color: #FFE17F;
+}
+
+.slide-description .button:active { /*А почему, когда я нажимаю на кнопку, у меня и состояние фокуса и активности вместе применяются? Это корректно?*/
+    background-color: #FFE17F;
+    color: rgba(0,0,0, 0.5);
+}
+
+.slide-description .button:focus {
+    background: linear-gradient(to bottom, transparent 36%, #AF4FFF 36% , #AF4FFF 66%, transparent 66%, transparent 99%)
+}
+
 .features {
-    border-spacing: 20px;
+    border-spacing: 20px 0;
 }
 
 .page-container {
@@ -173,9 +188,41 @@ body {
     flex-direction: column;
 }
 
-.img {
+.goods-catalog-item .goods-catalog-item-link:first-child {
+    position: relative;
+    background-color: #FFE17F;
+    display: block;
+    height: 160px;
+    width: 160px;
+    background-repeat: no-repeat;
+    background-position: center;
     margin-bottom: 33px;
 }
+
+.goods-catalog-item .navigation-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+goods-catalog-item-link:focus .goods-catalog-item { /*Не получается*/
+    outline: none;
+    border: 2px solid #AF4FFF;
+    color: #AF4FFF;
+    box-sizing: border-box; 
+}
+
+.goods-catalog-item-link:hover {  /*Не получается*/
+    background-color: #FFC700;
+}
+
+.goods-catalog-item-link:active .navigation-icon { /*Тоже никак не получается, уже перепробовала разные комбинации селекторов =(*/
+    fill: rgba(54, 54, 54, 0.5);
+}
+
 
 .goods-catalog {
     margin-bottom: 69px;
@@ -305,10 +352,16 @@ body {
     width: 1160px;
     background-color:#F0F0F0;
     display: grid;
-    grid-template-columns: 125px 910px auto; /*Получилось привести к макетному виду, но теперь текст вообще выпал*/
+    grid-template-columns: 125px 910px auto;
     grid-template-rows: 100px;
     margin-bottom: 97px;
     }
+
+.main-feature:focus {
+    box-sizing: border-box;
+    outline: none;
+    border: 5px solid #AF4FFF;  /*Не применяется*/
+}
 
 .subcribe-container {
     display: flex;
@@ -330,6 +383,10 @@ body {
 
 .additional-note {
     margin: 0;
+    background-image: url("../img/green.svg");
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 35px;
 }
 
 .subcribe-header {
@@ -344,8 +401,7 @@ body {
 
 .page-footer-container {
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+    flex-direction: column;
     padding-top: 62px;
     padding-bottom: 61px;
 }
@@ -366,15 +422,22 @@ footer {
     background-color: #444444;  
 }
 
-.first-column {
+.first-row {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    margin-bottom: 35px;
     width: auto;
 }
 
-.third-column {
+.second-row {
+    display:flex;
+    justify-content: space-between;
+    margin-bottom: 63px;
+
+}
+
+.third-row {
     display: flex;
-    flex-direction: column;
     align-items: flex-end;
 }
 
@@ -390,6 +453,7 @@ footer {
 }
 
 .upper-navigation-link {
+    position: relative;
     font-size: 16px;
     line-height: 19px;
     color:#000000;
@@ -446,17 +510,6 @@ footer {
     line-height: 30px;
 }
 
-.button {
-    font-family:"Raleway", sans-serif;
-    font-weight: 800;
-    font-style: normal;
-    font-size: 18px;
-    line-height: 22px;
-    text-decoration: none;
-    color:#000000;
-    background-color:#FFC700;
-}
-
 .section-header {
     font-family:"Raleway", sans-serif;
     font-weight: 800;
@@ -475,10 +528,10 @@ footer {
     color: #444444;
 }
 
-li .current-section-button {
+/*li .current-section-button {
     color: #FFE17F;
     background-color: #000000;
-}
+}*/
 
 .contact-phone {
     color: #444444;
@@ -604,11 +657,11 @@ footer {
 
 .yellow-logo {
     margin-top: 0;
-    margin-bottom: 35px;
+    margin-bottom: 0;
 }
 
 .footer-address {
-    width: 238px;
+    width: 239px;
     font-size: 16px;
     line-height: 19px;
 }
@@ -616,7 +669,7 @@ footer {
 .additional-page-list {
     width: 458px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding: 0;
     margin: 0;
     list-style-type: none;
@@ -624,7 +677,7 @@ footer {
 
 .footer-contact-phone {
     width:auto;
-    margin-bottom: 53px;
+    margin: 0;
     color: #FFFFFF;
     display: block;
     text-decoration: none;
@@ -635,6 +688,7 @@ footer {
 .additional-page-link {
     padding: 5px;
     font-family:"Raleway", sans-serif;
+    letter-spacing: 0.2em;
     font-weight: 800;
     font-style: normal;
     font-size: 18px;
@@ -644,9 +698,26 @@ footer {
     text-transform: uppercase;
 }
 
+
+.additional-page-link:hover {
+    color: #FFC700;
+    text-decoration: underline;
+}
+
+.additional-page-link:active {
+    color: rgba(255, 199, 0, 0.5);
+    text-decoration: underline;
+}
+
+.additional-page-link:focus {
+    box-sizing: border-box;
+    outline: none;
+    border: 2px solid #AF4FFF;
+    border-radius: 25px;
+}
+
 .additional-page-item {
     flex-shrink: 0; 
-    margin-right: 7px;
 }
 
 .additional-page-item:last-child {
@@ -655,7 +726,11 @@ footer {
 
 .socialmedia-list {
     list-style-type: none;
+    margin: 0;
+    margin-left:auto;
+    margin-right: 392px;
     display: flex;
+    justify-content: center;
     padding: 0;
 }
 
@@ -664,10 +739,28 @@ footer {
     margin: 0;
 }
 
+.htmlacademy-logo:focus {
+    box-sizing: border-box;
+    border: 2px solid #AF4FFF;
+    border-radius: 10px;
+    outline: none;
+}
+
+.htmlacademy-logo:hover{
+    fill: #FFFFFF; /*Не получается изменить цвет логотипа*/
+}
+
+.htmlacademy-logo:active{
+    fill: rgba(255, 255, 255, 0.5); /*  Тоже не получается изменить цвет логотипа*/
+}
+
 .slogan {
+    font-family: "Raleway",sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.2em;
     background-color: #F0F0F0;
     font-size: 20px;
-    line-height: 24;
+    line-height: 24px;
     text-transform: uppercase;
     font-weight: 800;
     text-align: center;
@@ -692,15 +785,34 @@ footer {
     font-size: 18px;
     line-height: 20px;
     color: #000000;
+    opacity: 0.6;
     text-decoration: none;
+    padding-right: 17px;
+}
+
+.links-onthepage-item:not(:last-child) {
+    background-image: url("../img/next-section.svg");
+    background-repeat: no-repeat;
+    background-position: right center;
+    margin-right: 15px;
+}
+
+.links-onthepage-link:focus {
+    box-sizing: border-box;
+    outline: none;
+    border: 5px solid #AF4FFF;
+}
+
+.links-onthepage-link:hover { /*Не меняется цвет текста при наведении*/
+    color: rgba(0, 0, 0, 1);
+}
+
+.links-onthepage-link:active {
+    color: rgba(0, 0, 0, 0.3);
 }
 
 .inner-header {
     background-color: #FFFFFF;
-}
-
-.catalog-filter-section {
-    background-color:#E5E5E5;
 }
 
 .catalog-filter {
@@ -724,10 +836,10 @@ footer {
     line-height: 19px;
     color: #000000;
     text-transform: uppercase;
+    vertical-align: middle;
     margin: 0;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    padding-right: 32px;
+    margin-right: 104px;
+    padding: 0;
 }
 
 form .filter-page-header {
@@ -771,6 +883,7 @@ form .filter-page-header {
 
 .product-card-title {
     width: 280px;
+    color: #000000;
 }
 
 .product-card-image {
@@ -797,15 +910,6 @@ form .filter-page-header {
     text-transform: uppercase;
 }
 
-.page-pagination {
-    background-color: #EBEBEB;
-    list-style-type: none;
-    padding-left: 29px;
-    padding-right: 30px;
-    padding-top: 27px;
-    padding-bottom: 24px;
-}
-
 /* Сетка для страницы каталога */
 
 
@@ -826,67 +930,95 @@ form .filter-page-header {
 
 .links-onthepage-list {
     display: flex;
-    justify-content: space-between;
     padding: 0;
     margin: 0;
     list-style-type: none
 }
 
-.links-onthepage-link {
-    padding: 5px;
-}
-
-.links-onthepage-item {
-    margin-right: 30px;
-}
-
 .sorting-section {
     display: flex;
-    padding-left: 72px;
-    padding-right: 140px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    background-color: #EBEBEB;
+    padding: 0;
+}
+
+.catalog-section {
+    display: flex;
 }
 
 .button-ascending {
-    margin-left: auto;
+    margin-left: auto; /*Перестал действовать*/
     width: 19px;
     margin-right: 19px;
+}
+
+.button-ascending .navigation-icon { /*Нигде у меня fill не срабатывает*/
+    fill:rgba(0, 0, 0, 0.3);
+}
+
+.button-ascending:focus {
+    outline: none;
+    box-sizing: border-box;
+    border: 5px solid #AF4FFF;
+}
+
+.button-ascending:hover .navigation-icon {
+    fill:rgba(0, 0, 0, 0.5);
+}
+
+.button-ascending:hover .navigation-icon {
+    fill:rgba(0, 0, 0, 1);
 }
 
 .button-descending {
     width: 19px;
 }
 
+.button-descending:focus {
+    outline: none;
+    box-sizing: border-box;
+    border: 5px solid #AF4FFF;
+}
+
+.button-descending .navigation-icon { 
+    fill:rgba(0, 0, 0, 0.3);
+}
+
+.button-descending:hover .navigation-icon {
+    fill:rgba(0, 0, 0, 0.5);
+}
+
+.button-descending:hover .navigation-icon {
+    fill:rgba(0, 0, 0, 1);
+}
+
 .select-control {
     margin-left: 52px;
 }
 
-
-.catalog-container {
-    display: flex;
-}
-
-
 .catalog-filter-section {
-    width: 468px;
+    display: flex;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 60px;
 }
 
-.catalog-filter-container {
-    width: 972px;
+.catalog-filter-body {
+    background: linear-gradient(90deg, #DCDCDC 32.5%, #EBEBEB 32.5%);
 }
+
+.catalog-product-body {
+    background: linear-gradient(90deg, #EBEBEB 32.5%, #FFFFFF 32.5%);
+}
+
 
 .product-list {
     display: grid;
     grid-template-columns: 360px 360px;
     gap: 40px;
     width: 760px;
-    margin-left: 72px;
-    margin-right: 140px;
-    margin-top: 69px;
-    margin-bottom: 44px;
-    padding: 0;
+    padding-left: 72px;
+    padding-top: 69px;
+    padding-bottom: 44px;
+    margin: 0;
     list-style-type: none;
 }
 
@@ -896,40 +1028,418 @@ form .filter-page-header {
     flex-direction: column;
 }
 
-.button-show-more-container {
-   border: 3px solid #000000;
-   width: 760px;
-   margin-left: 75px;
-   padding-top: 18px;
-   padding-bottom: 18px;
-   text-align: center;
-   padding-left: 29px;
-   padding-right: 30px;
+.button-show-more {
+    background-color: white;
+    border: 3px solid  #E5E5E5;
+    font-family: "Raleway",sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 19px;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    padding-left: 29px;
+    padding-right: 30px;
+    width: 760px;
+    margin-left: 75px;
+    margin-bottom: 51px;
+    box-sizing: border-box;
+    letter-spacing: 0.2em;
 }
 
 .page-pagination {
     display: flex;
     justify-content: space-between;
     width: 760px;
-    margin-bottom: 77px;
+    margin: 0;
     margin-left: 72px;
+    margin-bottom: 77px;
+    background-color: #EBEBEB;
+    list-style-type: none;
+    padding-left: 29px;
+    padding-right: 30px;
+    padding-top: 27px;
+    padding-bottom: 24px;
+    box-sizing: border-box;
 }
 
 .pagination-item {
     margin-right: 30px;
     flex-shrink: 0;
-    width: 19px;
+    width: min-content;
 }
 
 .pagination-prev {
     display: block;
     margin-right: auto;
+    letter-spacing: 0.2em;
 }
 
 .pagination-next {
     margin-left: auto;
+    letter-spacing: 0.2em;
 }
 
 .footer {
     background-color:#444444;
+}
+
+.button {
+    box-sizing: border-box;
+    min-width: 220px;
+    font-family: "Raleway",sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: inline-block;
+    padding-top: 7px;
+    padding-bottom: 5px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border: none;
+    display: inline-block;
+    font-style: normal;
+    letter-spacing: 0.2em;
+    text-decoration: none;
+    text-align: center;
+    color:#000000;
+    background: linear-gradient(to bottom, transparent 36%, #FFE17F 36% , #FFE17F 66%, transparent 66%, transparent 99%);
+}
+
+.switch-section-button:hover {  /*Что-то странное происходит, градиент остается*/
+    background-color: #FFC700;
+}
+
+.switch-section-button:active { /*Здесь тоже странно применяется*/
+    color: #FFE17F;
+    background-color: #000000;
+}
+
+
+
+/*Декоративные элементы*/
+
+.socialmedia-link {
+    position: relative;
+     display: block;
+     height: 40px;
+     width: 40px;
+     border-radius: 50%;
+     background-color: #FFFFFF4D;
+     background-repeat: no-repeat;
+     background-position: center;
+     background-size: 16px 16px;
+}
+
+.socialmedia-link .navigation-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+.socialmedia-item:not(:last-child) {
+    margin-right: 15px;
+}
+
+.search-form  .navigation-icon {
+    position: absolute;
+    right: 20px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto 0;
+}
+
+.search-form {
+    position: relative;
+    padding-left: 36px;
+}
+
+.enter .navigation-icon {
+    position: absolute;
+    right: 12px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto 0;
+}
+
+.enter-link {
+    position: relative;
+    padding-left: 25px;
+}
+
+.compare .navigation-icon {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto 0;
+}
+
+.compare-link {
+    position: relative;
+    padding-left: 20px;
+} 
+
+.cart .navigation-icon {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    bottom: 0;
+    left: 19px;
+    margin: auto 0;
+}
+
+.cart-link {
+   position: relative;
+   padding-left: 45px; 
+}
+
+.slider-button {
+    position: absolute;
+    border: none;
+    background-color: white;
+    display: inline-block;
+    cursor: pointer;
+    width: 20px;
+    height: 60px;
+}
+
+.slider-button:focus svg{
+    border: 2px solid #AF4FFF;
+    outline: none;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.slider-button:hover svg{
+    fill:rgba(0, 0, 0, 0.8); /*Не меняется цвет svg*/
+} 
+
+.slider-button:active svg{
+    fill:rgba(0, 0, 0, 0.5); /*Не меняется цвет svg*/
+} 
+
+.slider-prev {
+    left: 0;
+    right: 30px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+
+.slider-next {
+    left: 500px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+
+.product-slide {
+    position: relative;
+}
+
+.img-slide {
+    box-sizing: border-box;
+    margin-right: 40px;
+}
+
+.login-name {
+    position: relative;
+    padding-left: 25px;
+}
+
+.login-name .navigation-icon {
+    position: absolute;
+    right: 12px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto 0;
+}
+
+.out {
+    margin-right: 41px;
+    margin-left: 14px;
+}
+
+.button-ascending,
+.button-descending {
+    box-sizing: border-box;
+    border: none;
+    background-color: transparent;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.follow-me::before{ 
+   content: 'new'; 
+   bottom: 293px;
+   right: 27px;
+   left: 273px;
+   top: 27px;
+   position: absolute;
+   font-family: "Raleway",sans-serif;
+   font-size: 14px;
+   line-height: 17px;
+   letter-spacing: 0.2em;
+   font-weight: 800;
+   text-transform: uppercase;
+   text-align: center; /*А почему текст в кружочке на встает в центр кружочка?*/
+   vertical-align: middle;
+   color: #00000099;
+   z-index: 1;
+   border: 2px solid #00000099;
+   border-radius: 50%;
+   width: 60px;
+   height: 60px;
+}
+
+.product-card:last-child {
+    position: relative;
+}
+
+/*Состояния*/
+
+.under-navigation-link:focus {
+    border: 2px solid #AF4FFF;
+    border-radius: 25px;
+    outline: none;
+}
+
+.upper-navigation-link:focus {
+    border: 2px solid #AF4FFF;
+    border-radius: 25px;
+    outline: none;
+}
+
+.subcribe-button {
+    display:inline-block;
+    width: 260px;
+    height: 55px;
+    box-sizing: border-box;
+    padding-top: 17px;
+    padding-bottom: 18px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Raleway",sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+    border: 3px solid #E5E5E5;
+    background: transparent;
+}
+
+.subcribe-button:hover {
+    color: #FFFFFF;
+    background-color: #000000;
+}
+
+.subcribe-button:focus {
+    border: 3px solid #AF4FFF;
+    outline: none;
+}
+
+.socialmedia-link:hover {
+    background-color: #FFC700;
+}
+
+.socialmedia-link:focus {
+    background-color: transparent;
+    outline: none;
+    border: 5px solid #AF4FFF;
+    border-radius: 50%;
+}
+
+.socialmedia-link:focus .navigation-icon {
+    fill: #FFFFFF; /*так тоже не получается svg сделать белой*/
+}
+
+.socialmedia-link:active {
+    background-color: #FFC700;
+    fill:rgba(0,0,0, 0.5); /*Тоже не меняется тон svg*/
+}
+
+.footer-contact-phone:hover {
+    color: #FFC700;
+}
+
+.footer-contact-phone:focus {
+    border: 2px solid #AF4FFF;
+    outline: none;
+    border-radius: 25px;
+}
+
+.footer-contact-phone:active {
+    color: rgba(255, 199, 0, 0.5);
+}
+
+.product-card:focus .product-card-link {
+    border: 5px solid #AF4FFF;
+    outline: none;
+}
+
+.product-card:focus .product-description-container {
+    color: #AF4FFF;  /*Не получается*/
+    outline: none;
+}
+
+.button-show-more:hover {
+    border: 3px solid #000000;
+}
+
+.button-show-more:focus {
+    border: 5px solid #AF4FFF;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.pagination-link:hover {
+    background-color: #DCDCDC;
+}
+
+.pagination-link:focus { /*Не фокусируется на Вперед и 1*/
+    box-sizing: border-box;
+    outline: none;
+    border: 5px solid #AF4FFF;
+}
+
+.pagination-link:active {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.product-card-link:focus {
+    box-sizing: border-box;
+    outline:none;
+    border: 5px solid #AF4FFF; /*Правая часть границы не появляется, хотя я поставила border-box*/
+}
+
+.product-card-link:focus .product-description-container { /*Не понимаю, что я делаю не так*/
+    color: #AF4FFF;
+}
+
+.login-name .navigation-icon {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto 0;
+}
+
+.login-name-link {
+    position: relative;
+    padding-left: 25px;
 }
