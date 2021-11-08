@@ -118,6 +118,7 @@ body {
 }
 
 .catalog {
+    position: relative;
     flex-grow: 1;
 }
 
@@ -129,13 +130,55 @@ body {
     margin-right: 62px;
 }
 
-.product-slide {
-    display:flex;
-    justify-content: space-between;
-}
-
 .product-slider {
     margin-bottom: 70px;
+    display: flex;
+}
+
+.slider-pagination {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.slider-pagination-button {
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    border: 2px solid #000000;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+.slider-pagination-item:not(:last-child) {
+    margin-right: 22px;
+}
+
+.slider-pagination-button-current {
+    background-color: #000000;
+}
+
+.slider-pagination-button:hover {
+    border: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+.slider-pagination-button:focus {
+    border: 2px solid #AF4FFF;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.slider-pagination-button:active {
+    background-color: #000000;
+}
+
+.slider-image {
+    display: block;
 }
 
 .description {
@@ -154,13 +197,14 @@ body {
     background-color: #FFE17F;
 }
 
-.slide-description .button:active { /*А почему, когда я нажимаю на кнопку, у меня и состояние фокуса и активности вместе применяются? Это корректно?*/
+.slide-description .button:active { 
     background-color: #FFE17F;
     color: rgba(0,0,0, 0.5);
 }
 
-.slide-description .button:focus {
-    background: linear-gradient(to bottom, transparent 36%, #AF4FFF 36% , #AF4FFF 66%, transparent 66%, transparent 99%)
+.slide-description .button:focus-visible {
+    background: linear-gradient(to bottom, transparent 36%, #AF4FFF 36% , #AF4FFF 66%, transparent 66%, transparent 99%);
+    outline: none;
 }
 
 .features {
@@ -173,7 +217,7 @@ body {
 }
 
 .goods-catalog-list {
-    display: grid; /*Добавила грид*/
+    display: grid; 
     grid-template-columns: repeat(6,160px);
     gap: 40px;
     margin-top: 0;
@@ -206,23 +250,28 @@ body {
     bottom: 0;
     left: 0;
     margin: auto;
+    fill:rgba(54, 54, 54, 1);
 }
 
-goods-catalog-item-link:focus .goods-catalog-item { /*Не получается*/
-    outline: none;
-    border: 2px solid #AF4FFF;
-    color: #AF4FFF;
-    box-sizing: border-box; 
-}
-
-.goods-catalog-item-link:hover {  /*Не получается*/
+.goods-catalog-item-link:first-child:hover {  
     background-color: #FFC700;
 }
 
-.goods-catalog-item-link:active .navigation-icon { /*Тоже никак не получается, уже перепробовала разные комбинации селекторов =(*/
+.goods-catalog-item-link:focus-visible { 
+    outline: 2px solid #AF4FFF;
+}
+
+.goods-catalog-item-link:focus-visible + .goods-catalog-item-link {
+    color: #AF4FFF;
+}
+
+.goods-catalog-item-link:active .navigation-icon { 
     fill: rgba(54, 54, 54, 0.5);
 }
 
+.goods-catalog-item-link:active + .goods-catalog-item-link {
+    color: rgba(0, 0, 0, 0.5);
+}
 
 .goods-catalog {
     margin-bottom: 69px;
@@ -349,6 +398,7 @@ goods-catalog-item-link:focus .goods-catalog-item { /*Не получается*
 }
 
 .main-feature {
+    cursor: pointer;
     width: 1160px;
     background-color:#F0F0F0;
     display: grid;
@@ -357,10 +407,30 @@ goods-catalog-item-link:focus .goods-catalog-item { /*Не получается*
     margin-bottom: 97px;
     }
 
-.main-feature:focus {
+.main-feature:hover {
+    background-color: #EBEBEB;
+}
+
+.main-feature:hover .navigation-icon {
+    fill: #000000;
+}
+
+.main-feature:hover .car-item {
+    background-color: #FFC700; 
+}
+
+.main-feature:focus-visible {
     box-sizing: border-box;
-    outline: none;
-    border: 5px solid #AF4FFF;  /*Не применяется*/
+    outline: 5px solid #AF4FFF; 
+}
+
+.main-feature:active {
+    background-color: #EBEBEB;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.main-feature:active .car-item {
+    fill: rgba(0, 0, 0, 0.5);
 }
 
 .subcribe-container {
@@ -377,6 +447,7 @@ goods-catalog-item-link:focus .goods-catalog-item { /*Не получается*
 }
 
 .email-subcribe {
+    position: relative;
     width: max-content;
     flex-grow: 1;
 }
@@ -635,20 +706,45 @@ address {
     grid-column: 1/ 2;
     grid-row: 1/2;
     background-color: #FFE17F;
-    background-image: url("../img/car-item.svg");
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
+    position: relative;
     width: 125px;
     height: 100px;
 }
 
+.car-item .navigation-icon {
+    position: absolute;
+    fill: #000000;
+    top: 35px;
+    bottom: 34px;
+    left: 39px;
+    right: 39px;
+}
+
 .more-information {
-    background-color: #DCDCDC80;
-    background-image: url("../img/info-item.svg");
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
+    position: relative;
+    background-color: rgba(240, 240, 240, 1);
     grid-column: -1/-2;
     grid-row: 1/2;
+}
+
+.more-information .navigation-icon {
+    position: absolute;
+    fill: rgba(0, 0, 0, 0.5);
+    top: 47px;
+    bottom: 45px;
+    right: 56px;
+}
+
+.more-information::before {
+    position: absolute;
+    content: '';
+    background-color: #DCDCDC80;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    right: 33px;
+    top: 29px;
+    bottom: 31px;
 }
 
 footer {
@@ -683,6 +779,8 @@ footer {
     text-decoration: none;
     font-size: 16px;
     line-height: 30px;
+    border: 2px solid transparent;
+    box-sizing: border-box;
 }
 
 .additional-page-link {
@@ -696,6 +794,8 @@ footer {
     color: #FFFFFF;
     text-decoration: none;
     text-transform: uppercase;
+    border: 2px solid transparent;
+    box-sizing: border-box;
 }
 
 
@@ -704,16 +804,16 @@ footer {
     text-decoration: underline;
 }
 
-.additional-page-link:active {
-    color: rgba(255, 199, 0, 0.5);
-    text-decoration: underline;
-}
-
-.additional-page-link:focus {
+.additional-page-link:focus-visible {
     box-sizing: border-box;
     outline: none;
     border: 2px solid #AF4FFF;
     border-radius: 25px;
+}
+
+.additional-page-link:active {
+    color: rgba(255, 199, 0, 0.5);
+    text-decoration: underline;
 }
 
 .additional-page-item {
@@ -734,24 +834,27 @@ footer {
     padding: 0;
 }
 
-.htmlacademy-logo img {
-    display: block;
-    margin: 0;
+.htmlacademy-logo {
+    border: 2px solid transparent;
 }
 
-.htmlacademy-logo:focus {
+.htmlacademy-logo .navigation-icon {
+    fill: #FFC700;
+}
+
+.htmlacademy-logo:hover .navigation-icon{
+    fill: #FFFFFF; 
+}
+
+.htmlacademy-logo:focus-visible {
     box-sizing: border-box;
     border: 2px solid #AF4FFF;
     border-radius: 10px;
     outline: none;
 }
 
-.htmlacademy-logo:hover{
-    fill: #FFFFFF; /*Не получается изменить цвет логотипа*/
-}
-
-.htmlacademy-logo:active{
-    fill: rgba(255, 255, 255, 0.5); /*  Тоже не получается изменить цвет логотипа*/
+.htmlacademy-logo:active .navigation-icon {
+    fill: rgba(255, 255, 255, 0.5); 
 }
 
 .slogan {
@@ -797,14 +900,14 @@ footer {
     margin-right: 15px;
 }
 
-.links-onthepage-link:focus {
+.links-onthepage-link:focus-visible {
     box-sizing: border-box;
-    outline: none;
-    border: 5px solid #AF4FFF;
+    outline: 5px solid #AF4FFF;
 }
 
 .links-onthepage-link:hover { /*Не меняется цвет текста при наведении*/
-    color: rgba(0, 0, 0, 1);
+    color: #000000;
+    opacity: 1;
 }
 
 .links-onthepage-link:active {
@@ -851,6 +954,7 @@ form .filter-page-header {
     font-size: 16px;
     line-height: 19px;
     color: #000000;
+    margin-bottom: 32px;
 }
 
 /*Стилизация форм, как я поняла, делается не в рамках раздела 6*/
@@ -950,14 +1054,13 @@ form .filter-page-header {
     margin-right: 19px;
 }
 
-.button-ascending .navigation-icon { /*Нигде у меня fill не срабатывает*/
+.button-ascending .navigation-icon { 
     fill:rgba(0, 0, 0, 0.3);
 }
 
-.button-ascending:focus {
-    outline: none;
+.button-ascending:focus-visible {
     box-sizing: border-box;
-    border: 5px solid #AF4FFF;
+    outline: 5px solid #AF4FFF;
 }
 
 .button-ascending:hover .navigation-icon {
@@ -972,10 +1075,9 @@ form .filter-page-header {
     width: 19px;
 }
 
-.button-descending:focus {
-    outline: none;
+.button-descending:focus-visible {
     box-sizing: border-box;
-    border: 5px solid #AF4FFF;
+    outline: 5px solid #AF4FFF;
 }
 
 .button-descending .navigation-icon { 
@@ -1002,11 +1104,11 @@ form .filter-page-header {
 }
 
 .catalog-filter-body {
-    background: linear-gradient(90deg, #DCDCDC 32.5%, #EBEBEB 32.5%);
+    background: linear-gradient(90deg, #DCDCDC 35%, #EBEBEB 35%);
 }
 
 .catalog-product-body {
-    background: linear-gradient(90deg, #EBEBEB 32.5%, #FFFFFF 32.5%);
+    background: linear-gradient(90deg, #EBEBEB 35%, #FFFFFF 35%);
 }
 
 
@@ -1111,13 +1213,20 @@ form .filter-page-header {
     background: linear-gradient(to bottom, transparent 36%, #FFE17F 36% , #FFE17F 66%, transparent 66%, transparent 99%);
 }
 
-.switch-section-button:hover {  /*Что-то странное происходит, градиент остается*/
-    background-color: #FFC700;
+.switch-section-button:hover {  
+    background: #FFC700;
 }
 
-.switch-section-button:active { /*Здесь тоже странно применяется*/
+.switch-section-button:focus-visible {
+    background: linear-gradient(to bottom, transparent 36%, #AF4FFF 36% , #AF4FFF 66%, transparent 66%, transparent 99%);
+    outline: none;
+}
+
+
+.switch-section-button:active { 
     color: #FFE17F;
-    background-color: #000000;
+    background: #000000;
+    width: 280px;
 }
 
 
@@ -1126,14 +1235,16 @@ form .filter-page-header {
 
 .socialmedia-link {
     position: relative;
-     display: block;
-     height: 40px;
-     width: 40px;
-     border-radius: 50%;
-     background-color: #FFFFFF4D;
-     background-repeat: no-repeat;
-     background-position: center;
-     background-size: 16px 16px;
+    display: block;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    background-color: #FFFFFF4D;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 16px 16px;
+    box-sizing: border-box;
 }
 
 .socialmedia-link .navigation-icon {
@@ -1143,24 +1254,20 @@ form .filter-page-header {
     bottom: 0;
     left: 0;
     margin: auto;
+    fill: #444444;
 }
 
 .socialmedia-item:not(:last-child) {
     margin-right: 15px;
 }
 
-.search-form  .navigation-icon {
+.form-wrapper  .navigation-icon {
     position: absolute;
     right: 20px;
     top: 0;
     bottom: 0;
     left: 0;
     margin: auto 0;
-}
-
-.search-form {
-    position: relative;
-    padding-left: 36px;
 }
 
 .enter .navigation-icon {
@@ -1205,49 +1312,48 @@ form .filter-page-header {
    padding-left: 45px; 
 }
 
-.slider-button {
+.slider-controls {
     position: absolute;
+    display: flex;
+    justify-content: space-between;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+}
+
+.slider-button {
+    margin:0;
+    padding: 0;
     border: none;
-    background-color: white;
-    display: inline-block;
+    background-color: transparent;
+    display: block;
     cursor: pointer;
     width: 20px;
     height: 60px;
 }
 
-.slider-button:focus svg{
+.slider-button .navigation-icon {
+    fill: #000000;
+}
+
+.slider-button:hover .navigation-icon {
+    fill:rgba(0, 0, 0, 0.8); 
+} 
+
+.slider-button:focus-visible .navigation-icon {
     border: 2px solid #AF4FFF;
     outline: none;
     box-sizing: border-box;
     border-radius: 5px;
 }
 
-.slider-button:hover svg{
-    fill:rgba(0, 0, 0, 0.8); /*Не меняется цвет svg*/
+.slider-button:active .navigation-icon {
+    fill:rgba(0, 0, 0, 0.5);
 } 
-
-.slider-button:active svg{
-    fill:rgba(0, 0, 0, 0.5); /*Не меняется цвет svg*/
-} 
-
-.slider-prev {
-    left: 0;
-    right: 30px;
-    top: 0;
-    bottom: 0;
-    margin: auto 0;
-}
-
-.slider-next {
-    left: 500px;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto 0;
-}
 
 .product-slide {
     position: relative;
+    margin-right: 40px;
 }
 
 .img-slide {
@@ -1292,11 +1398,11 @@ form .filter-page-header {
    position: absolute;
    font-family: "Raleway",sans-serif;
    font-size: 14px;
-   line-height: 17px;
+   line-height: 60px;
    letter-spacing: 0.2em;
    font-weight: 800;
    text-transform: uppercase;
-   text-align: center; /*А почему текст в кружочке на встает в центр кружочка?*/
+   text-align: center; 
    vertical-align: middle;
    color: #00000099;
    z-index: 1;
@@ -1312,19 +1418,21 @@ form .filter-page-header {
 
 /*Состояния*/
 
-.under-navigation-link:focus {
+.under-navigation-link:focus-visible {
     border: 2px solid #AF4FFF;
     border-radius: 25px;
     outline: none;
 }
 
-.upper-navigation-link:focus {
+.upper-navigation-link:focus-visible {
     border: 2px solid #AF4FFF;
     border-radius: 25px;
     outline: none;
 }
 
 .subcribe-button {
+    position: absolute;
+    top:-4px;
     display:inline-block;
     width: 260px;
     height: 55px;
@@ -1338,8 +1446,9 @@ form .filter-page-header {
     font-size: 18px;
     line-height: 22px;
     color: #000000;
-    border: 3px solid #E5E5E5;
+    border: 3px solid rgba(0, 0, 0, 0.1);
     background: transparent;
+    letter-spacing: 0.2em;
 }
 
 .subcribe-button:hover {
@@ -1347,36 +1456,39 @@ form .filter-page-header {
     background-color: #000000;
 }
 
-.subcribe-button:focus {
-    border: 3px solid #AF4FFF;
-    outline: none;
+.subcribe-button:focus-visible {
+    outline: 3px solid #AF4FFF;
+    border: none;
+}
+
+.subcribe-button:active {
+    color:rgba(255, 255, 255, 0.5);
 }
 
 .socialmedia-link:hover {
     background-color: #FFC700;
 }
 
-.socialmedia-link:focus {
+.socialmedia-link:focus-visible {
     background-color: transparent;
     outline: none;
     border: 5px solid #AF4FFF;
     border-radius: 50%;
 }
 
-.socialmedia-link:focus .navigation-icon {
-    fill: #FFFFFF; /*так тоже не получается svg сделать белой*/
+.socialmedia-link:focus-visible .navigation-icon {
+    fill: #FFFFFF; 
 }
 
 .socialmedia-link:active {
     background-color: #FFC700;
-    fill:rgba(0,0,0, 0.5); /*Тоже не меняется тон svg*/
 }
 
 .footer-contact-phone:hover {
     color: #FFC700;
 }
 
-.footer-contact-phone:focus {
+.footer-contact-phone:focus-visible {
     border: 2px solid #AF4FFF;
     outline: none;
     border-radius: 25px;
@@ -1386,21 +1498,33 @@ form .filter-page-header {
     color: rgba(255, 199, 0, 0.5);
 }
 
-.product-card:focus .product-card-link {
-    border: 5px solid #AF4FFF;
-    outline: none;
+.socialmedia-link:active .navigation-icon {
+    fill:rgba(0,0,0, 0.5); 
 }
 
-.product-card:focus .product-description-container {
-    color: #AF4FFF;  /*Не получается*/
+.product-card:focus-visible .product-card-image {
+    border: 5px solid #AF4FFF;
+    outline: transparent; /*Почти получилось, только теперь outline все равно показывается, хотя я его убираю*/
+    box-sizing: border-box;
+}
+
+.product-card:focus-visible .product-card-title {
+    color: #AF4FFF;
     outline: none;
+    box-sizing: border-box;
+}
+
+.product-card:focus-visible .product-card-price {
+    color: #AF4FFF;
+    outline: none;
+    box-sizing: border-box;
 }
 
 .button-show-more:hover {
     border: 3px solid #000000;
 }
 
-.button-show-more:focus {
+.button-show-more:focus-visible {
     border: 5px solid #AF4FFF;
     box-sizing: border-box;
     outline: none;
@@ -1410,24 +1534,13 @@ form .filter-page-header {
     background-color: #DCDCDC;
 }
 
-.pagination-link:focus { /*Не фокусируется на Вперед и 1*/
+.pagination-link:focus-visible { 
     box-sizing: border-box;
-    outline: none;
-    border: 5px solid #AF4FFF;
+    outline: 5px solid #AF4FFF;
 }
 
 .pagination-link:active {
     color: rgba(0, 0, 0, 0.5);
-}
-
-.product-card-link:focus {
-    box-sizing: border-box;
-    outline:none;
-    border: 5px solid #AF4FFF; /*Правая часть границы не появляется, хотя я поставила border-box*/
-}
-
-.product-card-link:focus .product-description-container { /*Не понимаю, что я делаю не так*/
-    color: #AF4FFF;
 }
 
 .login-name .navigation-icon {
@@ -1442,4 +1555,205 @@ form .filter-page-header {
 .login-name-link {
     position: relative;
     padding-left: 25px;
+}
+
+/*Формы*/
+
+.email-input {
+    box-sizing: border-box;
+    padding-left: 0;
+    padding: 9px;
+    border: none;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.1);
+    background-color: transparent;
+    font: inherit;
+    width: 601px;
+}
+
+.email-input::placeholder {
+    color: #444444;
+    opacity: 0.5;
+}
+
+.email-input:disabled,
+.email-input:hover {
+    border-bottom: 3px solid rgba(0, 0, 0, 0.2);
+    color: rgba(68, 68, 68, 0.7);
+}
+
+.email-input:focus-visible {
+    outline: 3px solid #DCDCDC;
+    background-color: #DCDCDC;
+    border: none;
+}
+
+.email-input:active {
+    border-bottom: 3px solid rgba(0, 0, 0, 1);
+    color: #444444;
+}
+
+.error {
+    border-color: #FF3D3D;
+}
+
+.search-input {
+    background-color: transparent;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+    padding-left: 36px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    width: 516px;
+}
+
+.search-input::placeholder {
+    font-family: "Rubik",sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+    opacity: 0.3;
+
+}
+
+.search-input:disabled,
+.search-input:hover::placeholder {
+    color: #000000; /*Не получается*/
+}    
+
+.search-input:focus-visible {
+   border: 2px solid #AF4FFF;
+   outline: none;
+   border-radius: 20px;
+}
+
+.form-wrapper {
+    position: relative;
+}
+
+.catalog-filter-group {
+    border: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 46px;
+    display: flex;
+    flex-direction: column;
+}
+
+.range-scale {
+    position: relative;
+    height: 2px;
+    margin-bottom: 15px;
+    background-color: #DCDCDC;
+}
+
+.range-bar {
+    position: absolute;
+    height: 2px;
+    background-color: #000000;
+}
+
+.range-toggle {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: #EBEBEB;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+    border-radius: 50%;
+    cursor: pointer;
+}
+  
+.range-toggle:focus-visible {
+    outline: 2px solid #AF4FFF;
+} 
+
+.range-toggle:active {
+    border: 2px solid #000000;
+    background-color: #000000;
+}
+
+.toggle-min {
+    top: -8px;
+    left: -9px;
+}
+  
+  .toggle-max {
+    top: -8px;
+    right: -9px;
+}
+
+.range-wrapper-inputs {
+    display: flex;
+}
+  
+  .catalog-filter-label {
+    display: flex;
+    margin-right: 66px;
+}
+  
+  .range-input {
+    width: 59px; /*Не понимаю, почему расстояние между от и 0 такое большое, пробую ставить min-content или auto, вообще все ломается*/
+    padding: 0 2px;
+    font: inherit;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    appearance: textfield;
+}
+  
+  .range-input::-webkit-outer-spin-button,
+  .range-input::-webkit-inner-spin-button {
+    appearance: none;
+    margin: 0;
+}
+
+.more-about-company:hover,
+.write-to-us:hover {
+    background: #FFC700;
+}
+
+.more-about-company:focus-visible,
+.write-to-us:focus-visible {
+    background: linear-gradient(to bottom, transparent 36%, #AF4FFF 36% , #AF4FFF 66%, transparent 66%, transparent 99%);
+    outline: none;
+}
+
+.more-about-company:active,
+.write-to-us:hover:active {
+    background: #FFE17F;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.more-about-product {
+    outline: none;
+}
+
+.plus {
+    position: absolute;
+    transform: translateY(-14px);
+    background-color: transparent;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.plus::before,
+.plus::after {
+    content: '';
+    width: 16px;
+    height: 2px;
+    background-color:rgba(0, 0, 0, 0.5);
+    position: absolute;
+}
+
+.plus::before {
+    transform: rotate(90deg) translateY(7px);
+}
+
+.plus::after {
+    transform: rotate(180deg) translateX(7px); /*Эту кнопочку так реализовывать или все-таки через svg?*/
 }

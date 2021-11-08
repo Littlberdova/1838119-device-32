@@ -12,7 +12,7 @@
         <div class="content">
             <nav class="navigation">
                 <div class="navigation-container">
-                    <a class="navigation-logo" href="index.html"> <img src="img/logo.svg" width="145" height="36"
+                    <a class="navigation-logo" href="index.html" tabindex="-1"> <img src="img/logo.svg" width="145" height="36"
                             alt="Логотип компании"></a>
                     <section class="main-upper-navigation">
                         <ul class="upper-navigation-list">
@@ -114,13 +114,13 @@
                         </form>
                         <button class="button-ascending" type="button"> <svg class="navigation-icon" aria-hidden="true"
                                 focusable="false" width="11" height="10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5.5 0 11 10H0" fill="#000" />
+                                <path d="M5.5 0 11 10H0" />
                             </svg> <span class="visually-hidden"> По
                                 возрастанию
                             </span></button>
                         <button class="button-descending" type="button"> <svg class="navigation-icon" aria-hidden="true"
                                 focusable="false" width="11" height="10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5.5 10 0 0h11" fill="#000" />
+                                <path d="M5.5 10 0 0h11" />
                             </svg> <span class="visually-hidden">По
                                 убыванию</span></button>
                     </div>
@@ -134,16 +134,26 @@
                     <form class="catalog-filter" action="https://echo.htmlacademy.ru/" method="get">
                         <fieldset class="catalog-filter-group">
                             <legend class="catalog-filter-title"> Стоимость</legend>
-                            <button class="range-toggle toggle-min" type="button"> <span class="visually-hidden">
-                                    Изменить
-                                    минимальную стоимость</span> </button>
-                            <button class="range-toggle toggle-max" type="button"> <span class="visually-hidden">
-                                    Изменить
-                                    максимальную стоимость</span> </button>
-                            <label class="catalog-filter-label"> от <input class="visually-hidden" type="number"
-                                    name="min-price"> Р. </label>
-                            <label class="catalog-filter-label"> до <input class="visually-hidden" type="number"
-                                    name="max-price"> Р. </label>
+                            <div class="range">
+                                <div class="range-scale">
+                                    <div class="range-bar" style="left: 0px; width: 119px">
+                                        <button class="range-toggle toggle-min" type="button"> <span
+                                                class="visually-hidden">
+                                                Изменить
+                                                минимальную стоимость</span> </button>
+                                        <button class="range-toggle toggle-max" type="button"> <span
+                                                class="visually-hidden">
+                                                Изменить
+                                                максимальную стоимость</span> </button>
+                                    </div>
+                                </div>
+                                <div class="range-wrapper-inputs">
+                                    <label class="catalog-filter-label"> от <input class="range-input" type="number" value="0"
+                                            name="min-price"> </label>
+                                    <label class="catalog-filter-label"> до <input class="range-input" type="number" value="5000"
+                                            name="max-price"> </label>
+                                </div>
+                            </div>
                         </fieldset>
 
                         <fieldset class="catalog-filter-group">
@@ -179,8 +189,8 @@
                     <div class="product-cards-section">
                         <h2 class="visually-hidden"> Карточки товаров </h2>
                         <ul class="product-list">
-                            <li class="product-card">
-                                <a class="product-card-link" href="#">
+                            <li class="product-card" tabindex="0">
+                                <a class="product-card-link" href="#" tabindex="-1">
                                     <img class="product-card-image" src="img/catalog-product/product-1.jpg" width="360"
                                         height="380" alt="Продукт-1"></a>
                                 <div class="product-description-container">
@@ -189,8 +199,8 @@
                                 </div>
                                 <a class="more-about-product visually-hidden" href="#"> Подробнее </a>
                             </li>
-                            <li class="product-card">
-                                <a class="product-card-link" href="#">
+                            <li class="product-card" tabindex="0">
+                                <a class="product-card-link" href="#" tabindex="-1">
                                     <img class="product-card-image" src="img/catalog-product/product-2.jpg" width="360"
                                         height="380" alt="Продукт-2"></a>
                                 <div class="product-description-container">
@@ -199,8 +209,8 @@
                                 </div>
                                 <a class="more-about-product visually-hidden" href="#"> Подробнее </a>
                             </li>
-                            <li class="product-card">
-                                <a class="product-card-link" href="#">
+                            <li class="product-card" tabindex="0">
+                                <a class="product-card-link" href="#" tabindex="-1">
                                     <img class="product-card-image" src="img/catalog-product/product-3.jpg" width="360"
                                         height="380" alt="Продукт-3"> </a>
                                 <div class="product-description-container">
@@ -209,8 +219,8 @@
                                 </div>
                                 <a class="more-about-product visually-hidden" href="#"> Подробнее </a>
                             </li>
-                            <li class="product-card">
-                                <a class="product-card-link follow-me" href="#">
+                            <li class="product-card" tabindex="0">
+                                <a class="product-card-link follow-me" href="#" tabindex="-1">
                                     <img class="product-card-image" src="img/catalog-product/product-4.jpg" width="360"
                                         height="380" alt="Продукт-4"></a>
                                 <div class="product-description-container">
@@ -224,9 +234,9 @@
                             <button class="button-show-more" type="button"> Загрузить еще </button>
                         </div>
                         <ul class="page-pagination">
-                            <li class="pagination-item pagination-prev"><a class="pagination-link pagination-disabled">
+                            <li class="pagination-item pagination-prev"><a class="pagination-link pagination-disabled" href="#">
                                     Назад </a></li>
-                            <li class="pagination-item"> <a class="pagination-link pagination-current"> 1 </a></li>
+                            <li class="pagination-item"> <a class="pagination-link pagination-current" href="#"> 1 </a></li>
                             <li class="pagination-item"> <a class="pagination-link" href="#"> 2 </a></li>
                             <li class="pagination-item"> <a class="pagination-link" href="#"> 3 </a></li>
                             <li class="pagination-item"> <a class="pagination-link pagination-disabled"> ... </a>
@@ -247,7 +257,7 @@
         <div class="content">
             <div class="page-footer-container">
                 <div class="first-row">
-                    <a href="#"><img class="yellow-logo" src="img/yellow-logo.svg" width="145" height="36"
+                    <a href="#" tabindex="-1"><img class="yellow-logo" src="img/yellow-logo.svg" width="145" height="36"
                             alt="Логотип компании"></a>
                 </div>
                 <div class="second-row">
@@ -272,7 +282,7 @@
                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M6.5 3H9V0H5.6C2.8 0 2 1.7 2 4.2V6H0v3h2v9h3V9h3.3l.6-3H5V4.5C5 3.7 5.3 3 6.5 3Z"
-                                        fill="#444" />
+                                         />
                                 </svg> <span class="visually-hidden"> Facebook
                                 </span> </a></li>
                         <li class="socialmedia-item"> <a class="socialmedia-link inst"
@@ -281,7 +291,7 @@
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M14.7 1.3c-.9-.9-2-1.3-3.4-1.3H4.7A4.5 4.5 0 0 0 0 4.7v6.6c0 1.4.4 2.6 1.4 3.4.9.9 2 1.3 3.3 1.3h6.6c1.4 0 2.6-.4 3.4-1.3a5 5 0 0 0 1.3-3.4V4.7c0-1.4-.4-2.6-1.3-3.4ZM8 12.1A4.1 4.1 0 0 1 3.9 8c0-2.3 1.9-4.1 4.1-4.1 2.2 0 4.1 1.8 4.1 4.1s-1.9 4.1-4.1 4.1Zm4.6-7.4c-.7 0-1.3-.5-1.3-1.3s.5-1.3 1.3-1.3c.7 0 1.3.6 1.3 1.3 0 .7-.6 1.3-1.3 1.3Z"
-                                        fill="#444" />
+                                        />
                                 </svg>
                                 <span class="visually-hidden"> Instagram
                                 </span> </a></li>
@@ -291,7 +301,7 @@
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M9.7.1c1.5-.5 2.6.3 3.2 1.1.5-.2 1.1-.4 1.7-.6 0 .8-.5 1.4-.8 1.6.7.2 1.2-.4 1.2-.4-.1.9-.9 1.7-1.4 1.9-.2 6.3-2.8 10.4-8.9 10.3h-.4C4 14 .6 13.6 0 12.2c2 .2 3.4-.4 4.1-1.1-.8-.3-2.4-.4-2.6-2.8.3.2.5.3 1.1.2C1.5 7.7.3 7 .4 5c.3.3.9.5 1.2.4C1 5.2-.2 2.3.8.8c1.6 1.7 3.3 3.4 6.3 3.5.2-2.1 1-3.5 2.6-4.2Z"
-                                        fill="#444" />
+                                        />
                                 </svg>
                                 <span class="visually-hidden"> Twitter
                                 </span> </a></li>
