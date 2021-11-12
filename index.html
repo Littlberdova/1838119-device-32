@@ -25,8 +25,9 @@
                         fill="#000" />
                     </svg>
                     <label for="page-search" class="visually-hidden">Поиск по сайту</label>
-                    <input class="search-input" id="page-search" name="page-search" type=text
-                      placeholder="Поиск по сайту">  
+                    <input class="search-input search-input-disable search-input-active" id="page-search"
+                      name="page-search" type=text placeholder="Поиск по сайту">
+                    <button class="search-submit-button" type="submit"> Найти </button>
                   </div>
                 </form>
               </li>
@@ -34,38 +35,36 @@
                     class="navigation-icon" aria-hidden="true" focusable="false" width="13" height="12" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
-                      d="M0 12h13c-.2-2.6-2.1-4.8-4.7-5.5 1-.6 1.7-1.7 1.7-3C10 1.6 8.4 0 6.5 0S3 1.6 3 3.5c0 1.3.7 2.4 1.7 3C2.1 7.2.2 9.4 0 12Z"
-                      fill="#000" />
+                      d="M0 12h13c-.2-2.6-2.1-4.8-4.7-5.5 1-.6 1.7-1.7 1.7-3C10 1.6 8.4 0 6.5 0S3 1.6 3 3.5c0 1.3.7 2.4 1.7 3C2.1 7.2.2 9.4 0 12Z" />
                   </svg>Войти </a></li>
               <li class="upper-navigation-item compare"> <a class="upper-navigation-link compare-link" href="#"> <svg
                     class="navigation-icon" aria-hidden="true" focusable="false" width="10" height="12" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6 0H4v12h2V0ZM2 4H0v8h2V4ZM10 3H8v9h2V3Z" fill="#000" />
+                    <path d="M6 0H4v12h2V0ZM2 4H0v8h2V4ZM10 3H8v9h2V3Z" />
                   </svg>Сравнить </a></li>
-              <li class="upper-navigation-item cart"> <a class="upper-navigation-link cart-link" href="#"> <svg
-                    class="navigation-icon" aria-hidden="true" focusable="false" width="16" height="14" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
+              <li class="upper-navigation-item cart"> <a class="upper-navigation-link cart-link close-cart-link"
+                  href="#"> <svg class="navigation-icon" aria-hidden="true" focusable="false" width="16" height="14"
+                    fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
-                      d="m15.3 5-3.5.2L8.6.3C8.5.1 8.2 0 8 0c-.2 0-.5.1-.6.3L4.2 5.2H.7c-.4 0-.7.3-.7.7v.2l1.9 6.8c.2.7.7 1.1 1.4 1.1h9.4c.7 0 1.2-.4 1.4-1.1L16 6v-.2c0-.4-.3-.8-.7-.8ZM8 1.9l2.2 3.2H5.9L8 1.9Z"
-                      fill="#000" />
+                      d="m15.3 5-3.5.2L8.6.3C8.5.1 8.2 0 8 0c-.2 0-.5.1-.6.3L4.2 5.2H.7c-.4 0-.7.3-.7.7v.2l1.9 6.8c.2.7.7 1.1 1.4 1.1h9.4c.7 0 1.2-.4 1.4-1.1L16 6v-.2c0-.4-.3-.8-.7-.8ZM8 1.9l2.2 3.2H5.9L8 1.9Z" />
                   </svg>Корзина </a>
                 <div class="popover popover-cart">
                   <div class="popover-content">
                     <h2 class="popover-title visually-hidden">Корзина</h2>
                     <ul class="cart-item-list">
                       <li class="cart-item">
-                        <p class="cart-item-title"> Любительская селфи-палка </p>
                         <img class="cart-item-img" src="img/catalog-product/product-1.jpg" width="41" height="43" alt=""
                           tabindex="0">
+                        <p class="cart-item-title"> Любительская селфи-палка </p>
                         <button class="cart-item-button" type="button"> <svg class="navigation-icon" aria-hidden="true"
                             focusable="false" width="11" height="11" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="m11 1-1-1-4.5 4.5L1 0 0 1l4.5 4.5L0 10l1 1 4.5-4.5L10 11l1-1-4.5-4.5L11 1Z" />
                           </svg> <span class="visually-hidden"> Удалить из корзины </span> </button>
                       </li>
                       <li class="cart-item">
-                        <p class="cart-item-title"> Профессиональная селфи-палка </p>
                         <img class="cart-item-img" src="img/catalog-product/product-2.jpg" width="41" height="43" alt=""
                           tabindex="0">
+                        <p class="cart-item-title"> Профессиональная селфи-палка </p>
                         <button class="cart-item-button" type="button"> <svg class="navigation-icon" aria-hidden="true"
                             focusable="false" width="11" height="11" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="m11 1-1-1-4.5 4.5L1 0 0 1l4.5 4.5L0 10l1 1 4.5-4.5L10 11l1-1-4.5-4.5L11 1Z" />
@@ -85,8 +84,9 @@
           <section class="main-under-navigation">
             <ul class="under-navigation-list">
               <li class="under-navigation-item catalog">
-                <a class="under-navigation-link" href="#"> Каталог товаров</a>
-                <button class="plus" name="go-to-goodspage" type="button"> <span class="visually-hidden"> Расскрыть
+                <a class="under-navigation-link catalog-link" href="catalog.html"> Каталог товаров</a>
+                <button class="plus out" name="go-to-goodspage" type="button" tabindex="-1"> <span
+                    class="visually-hidden"> Расскрыть
                     католог
                     товаров
                   </span></button>
@@ -123,7 +123,7 @@
     <section class="popular-products-slider">
       <div class="content">
         <h2 class="visually-hidden"> Характеристики популярных товаров </h2>
-        <div class="product-slider current-slider">
+        <div class="product-slider product-slider-1 current-slider">
           <div class="product-slide">
             <img class="slider-image" src="img/slider/slider-img-1.png" width="560" height="560" alt="Квадракоптер">
             <div class="slider-controls">
@@ -170,7 +170,7 @@
           </ol>
         </nav>
 
-        <div class="product-slider">
+        <div class="product-slider product-slider-2">
           <div class="product-slide">
             <img class="slider-image" src="img/slider/slider-img-2.png" width="560" height="560" alt="Умные часы">
             <div class="slider-controls">
@@ -202,7 +202,7 @@
             </table>
           </div>
         </div>
-        <div class="product-slider">
+        <div class="product-slider product-slider-3">
           <div class="product-slide">
             <img class="slider-image" src="img/slider/slider-img-3.png" width="560" height="560" alt="Селфи-палка">
             <div class="slider-controls">
@@ -325,17 +325,20 @@
 
 
         <div class="page-container switch-container">
-          <ol class="section-switching">
-            <li class="switch-section-item delivery-section-item"> <button
-                class="button switch-section-button current-section-button" type="button">
-                Доставка </button></li>
-            <li class="switch-section-item guarantee-section-item"> <button class="button switch-section-button"
-                type="button">
-                Гарантия </button></li>
-            <li class="switch-section-item credit-section-item"> <button class="button switch-section-button"
-                type="button"> Кредит
-              </button></li>
-          </ol>
+          <input class="switch-slider-radio delivery" type="radio" name="slider" id="delivery" checked>
+          <input class="switch-slider-radio guarantee" type="radio" name="slider" id="guarantee">
+          <input class="switch-slider-radio credit" type="radio" name="slider" id="credit">
+          <ul class="section-switching">
+            <li class="switch-section-item delivery-section-item"> <label
+                class="button switch-section-button current-section-button" for="delivery" tabindex="0">
+                Доставка </label> </li>
+            <li class="switch-section-item guarantee-section-item"> <label class="button switch-section-button"
+                for="guarantee" tabindex="0">
+                Гарантия </label></li>
+            <li class="switch-section-item credit-section-item"> <label class="button switch-section-button"
+                for="credit" tabindex="0"> Кредит
+              </label></li>
+          </ul>
           <div class="service-slider service-slider-1">
             <div class="slider-text">
               <h3 class="slider-header"> Доставка </h3>
@@ -522,8 +525,11 @@
             </p>
 
             <p class="field-group amount-item-group">
-              <label class="amount-label" for="amount">Количество:<span class="visually-hidden">  <svg class="navigation-icon" width="2" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 0H0v2h2V0ZM2 4H0v8h2V4Z" fill="#000"/></svg> Больше информации </span></label>
-              <input class="delivery-form-field field" type="text" id="amount" name="item-amount" placeholder="1">
+              <label class="amount-label" for="amount">Количество: </label>
+              <button class="change-amount-button  plus-button"> <span class="visually-hidden"> Минус </span> </button>
+              <input class="delivery-form-field field amount-field" type="text" id="amount" name="item-amount" placeholder="1">
+              <button class="change-amount-button  minus-button"> <span class="visually-hidden"> Минус </span> </button>
+            <div class="additional-info"> <span class="visually-hidden"> Дополнительная информация </span> </div>
             <div class="popover popover-delivery-form">
               <div class="popover-content">
                 <h2 class="visually-hidden"> Дополнительная заметка </h2>

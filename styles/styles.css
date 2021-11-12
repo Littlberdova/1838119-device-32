@@ -32,11 +32,11 @@
 
 @font-face {
     font-family: "Glyphter";
-    src: url('../glyphter-fonts/Glyphter.eot');
-    src: url('../glyphter-fonts/Glyphter.eot?#iefix') format('embedded-opentype'),
-         url('../glyphter-fonts/Glyphter.woff') format('woff'),
-         url('../glyphter-fonts/Glyphter.ttf') format('truetype'),
-         url('../glyphter-fonts/Glyphter.svg#Glyphter') format('svg');
+    src: url('../fonts/glyphter-fonts/Glyphter.eot');
+    src: url('../fonts/glyphter-fonts/Glyphter.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/glyphter-fonts/Glyphter.woff') format('woff'),
+         url('../fonts/glyphter-fonts/Glyphter.ttf') format('truetype'),
+         url('../fonts/glyphter-fonts/Glyphter.svg#Glyphter') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -82,7 +82,8 @@ body {
 .navigation-container {
     padding-left: 60px;
     padding-right: 59px;
-    transform: translateY(-25px);
+    margin-top: -23px;
+    margin-bottom: 23px;
 }
 
 
@@ -108,6 +109,10 @@ body {
     text-decoration: none;
 }
 
+.upper-navigation-link .navigation-icon {
+    fill: rgba(0,0,0, 1);
+}
+
 .enter {
     margin-left:auto;
     margin-right: auto;
@@ -131,6 +136,10 @@ body {
     margin: 0;
 }
 
+.catalog-under-navigation-list {
+    padding-bottom: 53px;
+}
+
 .catalog {
     position: relative;
     flex-grow: 1;
@@ -145,8 +154,11 @@ body {
 }
 
 .product-slider {
+    margin-top: -50px;
     margin-bottom: 70px;
     display: flex;
+    position: relative;
+    align-items: flex-start;
 }
 
 .slider-pagination {
@@ -193,6 +205,7 @@ body {
 
 .slider-image {
     display: block;
+    margin-top: -100px;
 }
 
 .description {
@@ -205,6 +218,10 @@ body {
     display: inline-block;
     margin-top:0;
     margin-bottom: 70px;
+}
+
+.slide-description {
+    z-index: 1;
 }
 
 .slide-description .button:hover {
@@ -228,6 +245,10 @@ body {
 .page-container {
     display: flex;
     justify-content: space-between;
+}
+
+.goods-catalog {
+    margin-bottom: 169px;
 }
 
 .goods-catalog-list {
@@ -289,43 +310,68 @@ body {
 
 .switch-container {
     display: grid;
-    grid-template-columns: 280px 814px; /*Получился между рядами gap какой-то (видно в инспекторе), это ширина элементов накладывается друг на друга?*/
-    grid-template-areas: "section-switching service-slider-1"
-                         " .  service-slider-2"
-                         " .  service-slider-3";
+    align-items: flex-start;
+    grid-template-rows: 288px;
+    grid-template-columns: 280px 814px;
+    grid-template-areas: "section-switching service-slider";
     margin-bottom: 90px;
 }
 
 .section-switching {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     width: 280px;
     padding: 0;
     margin: 0;
+    margin-top: -33px;
     list-style-type: none;
     grid-area: section-switching;
+    position: relative;
+}
+
+.section-switching::after {
+    content: '';
+    background-color: #000000;
+    height: 319px;
+    width: 7px;
+    position: absolute;
+    right: 0;
+    top: -80px;
+}
+
+.switch-section-item:not(:last-child) {
+    margin-bottom: 44px;
+}
+
+.switch-slider-radio {
+    display: none;
 }
 
 .service-slider {
     width: 814px;
-    padding-top: 54px;
-    padding-bottom: 69px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    display: none;
+    margin-top: -30px;
 }
 
-.service-slider-1 {
-    grid-area: service-slider-1;
+.delivery:checked ~ .service-slider-1 {
+    display: flex;
 }
 
-.service-slider-2 {
-    grid-area: service-slider-2;
+.guarantee:checked ~ .service-slider-2 {
+    display: flex;
 }
 
+.credit:checked ~ .service-slider-3 {
+    display: flex;
+}
+
+.service-slider-1,
+.service-slider-2,
 .service-slider-3 {
-    grid-area: service-slider-3;
+    grid-area: service-slider;
 }
 
 .slider-description {
@@ -489,16 +535,10 @@ body {
     margin: 0;
     position: relative;
     padding-left: 35px;
-}
-
-.additional-note::before {
-    content: '';
-    position: absolute;
     background-image: url(../img/green.svg);
     background-repeat: no-repeat;
-    left: 0;
-    top: 50%;
-    transform: translateY(-7px); /*В инспекторе она вроде как и есть, но почему-то не видно галочку*/
+    background-position: left center;
+    align-self: center;
 }
 
 .subcribe-header {
@@ -554,6 +594,7 @@ footer {
 }
 
 .under-navigation-link {
+    position: relative;
     font-family:"Raleway", sans-serif;
     font-weight: 800;
     font-style: normal;
@@ -566,6 +607,10 @@ footer {
     width: max-content;
     border: 2px solid transparent;
     box-sizing: border-box;
+}
+
+.navigation-link-current {
+    padding-left: 0; /*Почему-то не применяется*/
 }
 
 .emphasise {
@@ -821,6 +866,7 @@ footer {
 }
 
 .additional-page-link {
+    position: relative;
     padding: 5px;
     font-family:"Raleway", sans-serif;
     letter-spacing: 0.2em;
@@ -838,7 +884,16 @@ footer {
 
 .additional-page-link:hover {
     color: #FFC700;
-    text-decoration: underline;
+}
+
+.additional-page-link:hover::after {
+    content:'';
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left:5px;
+    right: 5px;
+    background-color: rgba(255, 199, 0, 1);
 }
 
 .additional-page-link:focus-visible {
@@ -850,7 +905,10 @@ footer {
 
 .additional-page-link:active {
     color: rgba(255, 199, 0, 0.5);
-    text-decoration: underline;
+}
+
+.additional-page-link:active::after {
+    background-color: rgba(255, 199, 0, 0.5);
 }
 
 .additional-page-item {
@@ -964,7 +1022,7 @@ footer {
     color: #000000;
     margin: 0;
     padding-top: 71px;
-    padding-right: 69px; 
+    padding-left: 60px; 
 
 }
 
@@ -984,8 +1042,8 @@ footer {
 }
 
 .sorting-form {
-    line-height: 19px; /*Только так получается выровнять текст*/
-    margin-right: 200px; /*Почему-то автоматичечески маржин перестал срабатывать*/
+    line-height: 19px;
+    margin-right: 170px; 
 }
 
 form .filter-page-header {
@@ -1053,7 +1111,7 @@ form .filter-page-header {
 .pagination-link {
     font-size: 16px;
     line-height: 19px;
-    color: #444444;
+    color: rgba(68, 68, 68, 0.3);
     text-decoration: none;
 }
 
@@ -1066,6 +1124,11 @@ form .filter-page-header {
     color: #000000;
     text-decoration: none;
     text-transform: uppercase;
+}
+
+.pagination-prev:hover,
+.pagination-next:hover {
+    background-color: #DCDCDC;
 }
 
 /* Сетка для страницы каталога */
@@ -1122,7 +1185,7 @@ form .filter-page-header {
     fill:rgba(0, 0, 0, 0.5);
 }
 
-.button-ascending:hover .navigation-icon {
+.button-ascending:active .navigation-icon {
     fill:rgba(0, 0, 0, 1);
 }
 
@@ -1143,7 +1206,7 @@ form .filter-page-header {
     fill:rgba(0, 0, 0, 0.5);
 }
 
-.button-descending:hover .navigation-icon {
+.button-descending:active .navigation-icon {
     fill:rgba(0, 0, 0, 1);
 }
 
@@ -1191,16 +1254,19 @@ form .filter-page-header {
     background: linear-gradient(90deg, #EBEBEB 30%, #FFFFFF 30%);
 }
 
+.product-cards-section {
+    padding-top: 69px;
+    padding-bottom: 77px;
+    padding-left: 72px;
+}
 
 .product-list {
     display: grid;
     grid-template-columns: 360px 360px;
     gap: 40px;
     width: 760px;
-    padding-left: 72px;
-    padding-top: 69px;
-    padding-bottom: 44px;
     margin: 0;
+    padding:0;
     list-style-type: none;
 }
 
@@ -1226,19 +1292,19 @@ form .filter-page-header {
     padding-left: 29px;
     padding-right: 30px;
     width: 760px;
-    margin-left: 75px;
     margin-bottom: 51px;
+    margin-top: 44px;
     box-sizing: border-box;
     letter-spacing: 0.2em;
 }
 
 .page-pagination {
+    position: relative;
     display: flex;
     justify-content: space-between;
     width: 760px;
+    height: 70px;
     margin: 0;
-    margin-left: 72px;
-    margin-bottom: 77px;
     background-color: #EBEBEB;
     list-style-type: none;
     padding-left: 29px;
@@ -1263,6 +1329,38 @@ form .filter-page-header {
 .pagination-next {
     margin-left: auto;
     letter-spacing: 0.2em;
+}
+
+.pagination-prev-link,
+.pagination-next-link  {
+    position: absolute;
+    width: 127px;
+    height: 70px;
+    text-align: center;
+    padding-top: 27px;
+    padding-bottom: 24px;
+    box-sizing: border-box;
+    top: 0;
+    color: rgba(0, 0, 0, 1);
+}
+
+.pagination-prev-link {
+    left:0;
+}
+
+.pagination-next-link {
+    right:0;
+}
+
+.pagination-prev-link:hover,
+.pagination-next-link:hover  {
+    background-color: #DCDCDC;
+}
+
+.pagination-prev-link:active,
+.pagination-next-link:active  {
+    background-color: #DCDCDC;
+    color:rgba(0, 0, 0, 0.3);
 }
 
 .footer {
@@ -1307,11 +1405,47 @@ form .filter-page-header {
     color: #FFE17F;
     background: #000000;
     width: 280px;
+    text-align: left;
 }
 
 
 
 /*Декоративные элементы*/
+
+.product-slider-1::before {
+    content: '01';
+    font-family: "Rubik",sans-serif;
+    font-weight: 800;
+    font-size: 180px;
+    line-height: 30px;
+    color: #FFFFFF;
+    position: absolute;
+    right: 49px;
+    top: -20px;
+}
+
+.product-slider-2::before {
+    content: '02';
+    font-family: "Rubik",sans-serif;
+    font-weight: 800;
+    font-size: 180px;
+    line-height: 30px;
+    color: #FFFFFF;
+    position: absolute;
+    right: 49px;
+    top: -20px;
+}
+.product-slider-3::before {
+    content: '03';
+    font-family: "Rubik",sans-serif;
+    font-weight: 800;
+    font-size: 180px;
+    line-height: 30px;
+    color: #FFFFFF;
+    position: absolute;
+    right: 40px;
+    top: -20px;
+}
 
 .socialmedia-link {
     position: relative;
@@ -1344,10 +1478,10 @@ form .filter-page-header {
 .form-wrapper  .navigation-icon {
     position: absolute;
     right: 20px;
-    top: 0;
-    bottom: 0;
+    top: 50%;
     left: 0;
     margin: auto 0;
+    transform: translateY(-50%);
 }
 
 .enter .navigation-icon {
@@ -1392,13 +1526,17 @@ form .filter-page-header {
    padding-left: 45px; 
 }
 
+.close-cart-link ~ .popover-cart {
+    display: none;
+}
+
 .slider-controls {
     position: absolute;
     display: flex;
     justify-content: space-between;
     top: 50%;
     width: 100%;
-    transform: translateY(-50%);
+    transform: translateY(-140%);
 }
 
 .slider-button {
@@ -1495,16 +1633,52 @@ form .filter-page-header {
 
 /*Состояния*/
 
+
+.under-navigation-link:hover::after{
+    content:'';
+    height: 2px;
+    background-color: rgba(0,0,0, 1);
+    position: absolute;
+    bottom:0;
+    left:10px;
+    right: 10px;
+
+}
+
 .under-navigation-link:focus-visible {
     border: 2px solid #AF4FFF;
     border-radius: 25px;
     outline: none;
 }
 
+.under-navigation-link:active {
+    color: rgba(0,0,0, 0.3);
+}
+
+.under-navigation-link:active::after {
+    background-color: rgba(0,0,0, 0.3);
+}
+
+.upper-navigation-link:hover {
+    color: rgba(0,0,0, 0.6);
+}
+
+.upper-navigation-link:hover .navigation-icon {
+    fill: rgba(0,0,0, 0.6);
+}
+
 .upper-navigation-link:focus-visible {
     border: 2px solid #AF4FFF;
     border-radius: 25px;
     outline: none;
+}
+
+.upper-navigation-link:active {
+    color: rgba(0,0,0, 0.3);
+}
+
+.upper-navigation-link:active .navigation-icon {
+    fill: rgba(0,0,0, 0.3);
 }
 
 .subcribe-button {
@@ -1534,8 +1708,8 @@ form .filter-page-header {
 }
 
 .subcribe-button:focus-visible {
-    outline: 3px solid #AF4FFF;
-    border: none;
+    border: 3px solid #AF4FFF;
+    outline: none;
 }
 
 .subcribe-button:active {
@@ -1579,9 +1753,16 @@ form .filter-page-header {
     fill:rgba(0,0,0, 0.5); 
 }
 
+.product-card:hover .product-card-popover {
+    display: block;
+}
+
+.product-card:focus-visible {
+    outline: none;
+}
+
 .product-card:focus-visible .product-card-image {
-    border: 5px solid #AF4FFF;
-    outline: transparent; /*Почти получилось, только теперь outline все равно показывается, хотя я его убираю*/
+    outline: 5px solid #AF4FFF; 
     box-sizing: border-box;
 }
 
@@ -1595,6 +1776,49 @@ form .filter-page-header {
     color: #AF4FFF;
     outline: none;
     box-sizing: border-box;
+}
+
+.product-card-popover {
+    position: absolute;
+    width: 360px;
+    height: 380px;
+    background-color: #F0F0F0CC;
+    padding: 180px 100px;
+    box-sizing: border-box;
+    display: none;
+}
+
+.more-about-product {
+    box-sizing: border-box;
+    min-width: 180px;
+    font-family: "Raleway",sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: inline-block;
+    padding-top: 7px;
+    padding-bottom: 5px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border: none;
+    display: inline-block;
+    font-style: normal;
+    letter-spacing: 0.2em;
+    text-decoration: none;
+    text-align: center;
+    color: #000000;
+    background: linear-gradient(to bottom, transparent 36%, #FFE17F 36% , #FFE17F 66%, transparent 66%, transparent 99%);
+}
+
+.more-about-product:hover {
+    background: #FFC700;
+}
+
+.more-about-product:active {
+    background: #FFC700;
+    color: rgba(0, 0, 0, 0.3);
 }
 
 .button-show-more:hover {
@@ -1613,7 +1837,7 @@ form .filter-page-header {
 }
 
 .pagination-link:hover {
-    background-color: #DCDCDC;
+    color: #444444;
 }
 
 .pagination-link:focus-visible { 
@@ -1622,7 +1846,7 @@ form .filter-page-header {
 }
 
 .pagination-link:active {
-    color: rgba(0, 0, 0, 0.5);
+    color: rgba(0, 0, 0, 0.1);
 }
 
 .login-name .navigation-icon {
@@ -1650,6 +1874,7 @@ form .filter-page-header {
     background-color: transparent;
     font: inherit;
     width: 601px;
+    height: 51px;
 }
 
 .email-input::placeholder {
@@ -1667,6 +1892,7 @@ form .filter-page-header {
     outline: 3px solid #DCDCDC;
     background-color: #DCDCDC;
     border: none;
+    box-sizing: border-box;
 }
 
 .email-input:active {
@@ -1678,15 +1904,74 @@ form .filter-page-header {
     border-color: #FF3D3D;
 }
 
+.search-form {
+    width:516px;
+    box-sizing: border-box;
+    position: relative;
+}
+
 .search-input {
+    width:100%;
     background-color: transparent;
     box-sizing: border-box;
     border: 2px solid transparent;
+    border-radius: 20px;
     padding-left: 36px;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-right: 10px;
-    width: 516px;
+    cursor: pointer;
+}
+
+.search-submit-button {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    background-color: transparent;
+    font-family: "Rubik", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 17px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    display: inline-block;
+    width: 160px;
+    position: absolute;
+    right: 0;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+
+.search-submit-button::before {
+    content:'';
+    background-color: rgba(0, 0, 0, 1);
+    width: 2px;
+    position: absolute;
+    left:0;
+    top:0;
+    bottom:0;
+}
+
+.search-submit-button:hover {
+    background-color: #000000;
+    color: rgba(255, 255, 255, 1);
+}
+
+.search-submit-button:focus-visible {
+    outline: none;
+    border-color: #AF4FFF;
+}
+
+.search-submit-button:focus-visible::before {
+    background-color: #AF4FFF;
+}
+
+.search-submit-button:active {
+    background-color: #000000;
+    color: rgba(255, 255, 255, 0.3);
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
 .search-input::placeholder {
@@ -1695,21 +1980,32 @@ form .filter-page-header {
     font-weight: normal;
     font-size: 16px;
     line-height: 19px;
-    color: #000000;
-    opacity: 0.3;
+    color: rgba(0, 0, 0, 0.3);
 
 }
 
-.search-input:disabled,
 .search-input:hover::placeholder {
-    color: #000000; /*Не получается*/
-}    
+    color: rgba(0, 0, 0, 0.6);
+}
 
 .search-input:focus-visible {
    border: 2px solid #AF4FFF;
    outline: none;
    border-radius: 20px;
 }
+
+.search-input-active::placeholder {
+    color:rgba(0, 0, 0, 1);
+} 
+
+.search-input-active {
+    border-color:rgba(0, 0, 0, 1);
+}
+
+/*
+.search-input:active + .search-submit-button {
+    display: inline-block;
+}*/
 
 .form-wrapper {
     position: relative;
@@ -1750,7 +2046,8 @@ form .filter-page-header {
 }
   
 .range-toggle:focus-visible {
-    outline: 2px solid #AF4FFF;
+    border: 2px solid #AF4FFF;
+    outline: none;
 } 
 
 .range-toggle:active {
@@ -1777,10 +2074,11 @@ form .filter-page-header {
 }
   
   .range-input {
-    width: 59px; /*Не понимаю, почему расстояние между от и 0 такое большое, пробую ставить min-content или auto, вообще все ломается*/
-    padding: 0 2px;
+    width: 59px; 
+    text-align: left;
+    padding: 0;
+    padding-left: 5px;
     font: inherit;
-    text-align: center;
     background-color: transparent;
     border: none;
     appearance: textfield;
@@ -1809,10 +2107,6 @@ form .filter-page-header {
     color: rgba(0, 0, 0, 0.5);
 }
 
-.more-about-product {
-    outline: none;
-}
-
 .plus {
     position: absolute;
     transform: translateY(-14px);
@@ -1833,11 +2127,48 @@ form .filter-page-header {
 }
 
 .plus::before {
-    transform: rotate(90deg) translateY(7px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
 }
 
 .plus::after {
-    transform: rotate(180deg) translateX(7px); /*Эту кнопочку так реализовывать или все-таки через svg?*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.plus:hover {
+    border-color: rgba(0, 0, 0, 1);
+}
+
+.out + .sub-directory-popover {
+    display: none;
+}
+
+.plus:hover::before,
+.plus:hover::after {
+    background-color: rgba(0, 0, 0, 1);
+}
+
+.plus:hover::before {
+    display: none;
+}
+
+.plus:active::before {
+    display: none;
+}
+
+.plus:active::after {
+    background-color: rgba(0,0,0, 0.5);
+}
+
+.plus:active {
+    border-color: rgba(0,0,0, 0.5);
+}
+
+.plus:active  .catalog-link {
+    color: rgba(0,0,0, 0.5);
 }
 
 .product-slider:not(.current-slider) {
@@ -1850,8 +2181,9 @@ form .filter-page-header {
 
 .description-navigation {
     position: absolute;
-    bottom: 300px;
+    bottom: 200px;
     right: 59px;
+    z-index: 2;
 }
 
 .about-us .section-header::before,
@@ -1898,7 +2230,7 @@ form .filter-page-header {
     border-color: rgba(0, 0, 0, 1);
 }
 
-.product-color:hover .control-mark { /*Ничего не меняется*/
+.control-label:hover ~ .control-mark { /*Ничего не меняется*/
     border-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -1908,6 +2240,10 @@ form .filter-page-header {
 
 .control-input:focus-visible ~ .control-label {
     color: #AF4FFF;
+}
+
+.control-label:active .control-mark {
+    border-color: rgba(0,0,0, 0.2);
 }
 
 .product-color:active {
@@ -1923,7 +2259,7 @@ form .filter-page-header {
   font-style: normal;
   font-weight: normal;
   line-height: 1;
-   -webkit-font-smoothing: antialiased; /*Пробую добавить свг через шрифт, но все равно буква стоит*/
+   -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale
 }
 
@@ -1953,7 +2289,15 @@ form .filter-page-header {
       border-color:rgba(0, 0, 0, 1);
   }
 
-  .bluetooth-option:hover .control-mark { /*Ничего не меняется*/
+  .bluetooth-option:hover {
+      color:rgba(0,0,0, 0.5);
+  }
+
+  .control-input[type="radio"]:checked:hover .bluetooth-option {
+      color:rgba(0,0,0, 1); /*Не работает*/
+  }
+
+  .bluetooth-option:hover ~ .control-mark { /*Ничего не меняется*/
     border-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -1986,7 +2330,18 @@ form .filter-page-header {
     min-height: 218px;
     right: -82px;
     top: 43px;
-    z-index: 1;
+    z-index: 4;
+}
+
+.popover::before {
+    content:'';
+    width: 14px;
+    height: 14px;
+    background-color: #000000;
+    transform: translateX(-50%) rotate(45deg);
+    position: absolute;
+    top: -6px;
+    left: 50%;
 }
 
 .cart {
@@ -2014,6 +2369,7 @@ form .filter-page-header {
 
 .cart-item-img {
     order: -1;
+    cursor: pointer;
 }
 
 .cart-item + .cart-item {
@@ -2043,11 +2399,9 @@ form .filter-page-header {
     fill: #FFFFFF;
     position: absolute;
     margin: 0 auto;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 
 .cart-item-button:hover .navigation-icon {
@@ -2064,7 +2418,27 @@ form .filter-page-header {
 }
 
 .cart-item-img:hover {
-    /*Тут тоже через свг?*/
+    opacity: 0.6;
+}
+
+.cart-item-img:hover + .cart-item-title {
+    color:rgba(255, 255, 255, 0.6);
+}
+
+.cart-item-img:focus-visible {
+    outline: 5px solid #AF4FFF;
+}
+
+.cart-item-img:focus-visible + .cart-item-title {
+    color: #AF4FFF;
+}
+
+.cart-item-img:active {
+    opacity: 0.3;
+}
+
+.cart-item-img:active + .cart-item-title {
+    color:rgba(255, 255, 255, 0.3);
 }
 
 .total-price-container {
@@ -2128,7 +2502,18 @@ form .filter-page-header {
     padding-top: 33px;
     padding-bottom:  27px;
     position: absolute;
+    background-color: #FFE17F;
+    width: 1160px;
+    position: absolute;
+    left:-60px;
+    top: 40px;
+    padding-left: 45px;
+    padding-right: 59px;
+    box-sizing: border-box;
+    z-index: 3;
 }
+
+
 
 .sub-directory-list {
     padding: 0;
@@ -2149,6 +2534,25 @@ form .filter-page-header {
     font-weight: 400;
     font-size: 16px;
     line-height: 18px;
+    border: 2px solid transparent;
+    border-radius: 25px;
+    box-sizing: border-box;
+    padding: 3px 15px;
+    display: block;
+    min-width: max-content;
+}
+
+.sub-directory-item-link:hover {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.sub-directory-item-link:focus-within {
+    outline: none;
+    border-color: #AF4FFF;
+}
+
+.sub-directory-item-link:active {
+    color:rgba(0, 0, 0, 0.3);
 }
 
 .sub-directory-item:not(:last-child) {
@@ -2163,11 +2567,13 @@ form .filter-page-header {
     width: 100%;
     height: 100%;
     background-color:rgba(255, 255, 255, 0.8);
+    z-index: 5;
   }
 
+  /*
 .modal-container-close {
       display: none;
-  }
+  }*/
 
 .modal {
     position: relative;
@@ -2295,21 +2701,77 @@ form .filter-page-header {
     width: 146px;
 }
 
-/*.amount-label::after {
-    content:'';
+.change-amount-button {
+    cursor: pointer;
+    display: inline-block;
     position: absolute;
+    border: 2px solid transparent;
+    background-color: transparent;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.plus-button::before,
+.plus-button::after,
+.minus-button::before {
+    content:'';
+    height: 2px;
+    width: 14px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+}
+
+.plus-button::before {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.plus-button::after {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}   
+
+.minus-button::before {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.plus-button {
+    left: 0;
+    bottom: 0;
+    transform: translate(-50%, -50%);
+}
+
+.minus-button {
+    right: 0;
+    bottom: 0;
+}
+
+.additional-info {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
     background-color: #FFE17F;
     background-image: url(../img/black-info-logo.svg);
     background-repeat: no-repeat;
     background-position: center;
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    right: 0;
-    top: 50%;
-    transform: translateY(-13px);
-    cursor: pointer; Не знаю, как лучше сделать, чтобы при наведении показывался поповер
-}*/
+    right: 140px;
+    top: 327px;
+    cursor: pointer;
+}
+
+.additional-info:hover ~ .popover-delivery-form {
+    display: block;
+}
+
+.amount-field {
+    text-align: center;
+}
 
 .popover-delivery-form {
     position: absolute;
@@ -2318,7 +2780,12 @@ form .filter-page-header {
     box-sizing: border-box;
     padding: 19px;
     right: 90px;
-    top: 330px;
+    top: 360px;
+    display: none;
+}
+
+.popover-delivery-form::before {
+    left: 70%;
 }
 
 .amount-item-group {
@@ -2328,15 +2795,6 @@ form .filter-page-header {
 
 .popover-content-text {
     margin:0;
-}
-
-.popover-delivery-form::before {
-    content: '';
-    position: absolute;
-    background-image: url(../img/popoper-part.svg);
-    background-repeat: no-repeat;
-    top: 0;
-    right: 50%; /*Не могу найти треугольничек*/
 }
 
 .field:hover {
