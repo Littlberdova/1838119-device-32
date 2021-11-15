@@ -26,7 +26,7 @@
                                                 />
                                         </svg>
                                         <label for="page-search" class="visually-hidden">Поиск по сайту</label>
-                                        <input class="search-input search-input-disable search-input-active" id="page-search" name="page-search" type=text
+                                        <input class="search-input" id="page-search" name="page-search" type=text
                                             placeholder="Поиск по сайту">
                                             <button class="search-submit-button" type="submit"> Найти </button>    
                                     </div>
@@ -84,8 +84,8 @@
                     <section class="main-under-navigation">
                         <ul class="under-navigation-list catalog-under-navigation-list">
                             <li class="under-navigation-item catalog">
-                                <a class="under-navigation-link navigation-link-current" href="catalog.html"> Каталог товаров</a>
-                                <button class="plus out" name="go-to-goodspage" type="button"> <span class="visually-hidden"> Раскрыть
+                                <a class="under-navigation-link catalog-link navigation-link-current" href="catalog.html"> Каталог товаров</a>
+                                <button class="plus out" name="go-to-goodspage" type="button" tabindex="-1"> <span class="visually-hidden"> Раскрыть
                                         католог
                                         товаров
                                     </span></button>
@@ -147,7 +147,7 @@
                     <h2 class="filter-page-header">Фильтр:</h2>
                     <div class="sorting-section">
                         <form class="sorting-form" action="https://echo.htmlacademy.ru/" method="get">
-                            <label for="sorting" class="filter-page-header"> Сортировка: </label>
+                            <label for="sorting" class="filter-page-header sorting-header"> Сортировка: </label>
                             <select class="select-control" id="sorting" name="sorting">
                                 <option value="popular"> Сначала популярные </option>
                             </select>
@@ -200,27 +200,32 @@
                             <legend class="catalog-filter-title"> Цвет </legend>
                             <ul class="catalog-filter-list">
                                 <li class="catalog-filter-item">
-                                    <label class="product-color"><input class="visually-hidden control-input" name="black" type="checkbox" checked> 
+                                    <input class="visually-hidden control-input" id="black" name="black" type="checkbox" checked> 
+                                    <label for="black" class="product-color">
                                         <span class="control-mark"></span>
                                         <span class="control-label color-name">  Чёрный</span></label>
                                 </li>
                                 <li class="catalog-filter-item">
-                                    <label class="product-color"><input class="visually-hidden control-input" name="white" type="checkbox" checked>
+                                    <input class="visually-hidden control-input" id="white" name="white" type="checkbox" checked>
+                                    <label for="white" class="product-color">
                                         <span class="control-mark"></span>
                                         <span class="control-label color-name"> Белый </span></label>
                                 </li>
                                 <li class="catalog-filter-item">
-                                    <label class="product-color"><input class="visually-hidden control-input" name="blue" type="checkbox"> 
+                                    <input class="visually-hidden control-input" id="blue" name="blue" type="checkbox"> 
+                                    <label for="blue" class="product-color">
                                         <span class="control-mark"></span>
                                         <span class="control-label color-name"> Синий </span></label>
                                 </li>
                                 <li class="catalog-filter-item">
-                                    <label class="product-color"><input class="visually-hidden control-input" name="red" type="checkbox"> 
+                                    <input class="visually-hidden control-input" id="red" name="red" type="checkbox"> 
+                                    <label for="red" class="product-color">
                                         <span class="control-mark"></span>
                                         <span class="control-label color-name">  Красный </span></label>
                                 </li>
                                 <li class="catalog-filter-item">
-                                    <label class="product-color"><input class="visually-hidden control-input" name="pink" type="checkbox"> 
+                                    <input class="visually-hidden control-input" id="pink" name="pink" type="checkbox"> 
+                                    <label for="pink" class="product-color">
                                         <span class="control-mark"></span>
                                         <span class="control-label color-name"> Розовый </span></label>
                                 </li>
@@ -231,12 +236,14 @@
                             <legend class="catalog-filter-title"> Bluetooth </legend>
                             <ul class="catalog-filter-list">
                             <li class="catalog-filter-item">  
-                                <label class="bluetooth-option"><input class="visually-hidden control-input" name="bluetooth-option" type="radio" value="on">
+                                <input class="visually-hidden control-input" name="bluetooth-option" type="radio" value="on" id="bluetooth-on" checked>
+                                <label for="bluetooth-on" class="bluetooth-option">
                                     <span class="control-mark"></span>
                                     <span class="control-label option-name"> Есть </span></label></li>
                             </li>
                                 <li class="catalog-filter-item">    
-                            <label class="bluetooth-option"> <input class="visually-hidden control-input" name="bluetooth-option" type="radio" value="off" >
+                                <input class="visually-hidden control-input" name="bluetooth-option" type="radio" value="off" id="bluetooth-off" >
+                            <label for="bluetooth-off" class="bluetooth-option">
                                 <span class="control-mark"></span>
                                 <span class="control-label option-name"> Нет </span></label></li>
                             </ul>    
