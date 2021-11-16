@@ -349,11 +349,25 @@ body {
     display: none;
 }
 
-.switch-slider-radio[type="radio"]:checked + .section-switching >.switch-section-item >.button   {
+.delivery:checked ~ .section-switching >.delivery-section-item >.button   {
     color: #FFE17F;
     background: #000000;
     width: 280px;
-    text-align: left; /*Очень странно применяется*/
+    text-align: left; 
+}
+
+.guarantee:checked ~ .section-switching >.guarantee-section-item >.button   {
+    color: #FFE17F;
+    background: #000000;
+    width: 280px;
+    text-align: left; 
+}
+
+.credit:checked ~ .section-switching >.credit-section-item >.button   {
+    color: #FFE17F;
+    background: #000000;
+    width: 280px;
+    text-align: left; 
 }
 
 .service-slider {
@@ -625,16 +639,21 @@ footer {
     display: none;
 }
 
-.catalog-link:hover ~ .plus:hover::before,  /*Не получается применить цвет*/
-.navigation-link-current:hover ~ .plus:hover::after {
+.catalog-link:hover ~ .plus::after {
     background-color: #000000;
 }
 
-.catalog-link:hover ~ .plus:hover,
-.catalog-link:hover ~ .plus:hover {
+.catalog-link:hover ~ .plus {
     border-color: #000000;
 }
 
+.catalog-link:active ~ .plus::after {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.catalog-link:active ~ .plus {
+    border-color: rgba(0, 0, 0, 0.3);
+}
 
 .catalog-link:hover ~ .plus::before {
     display: none;
@@ -1550,14 +1569,14 @@ form .filter-page-header {
     font-family: "Rubik",sans-serif;
     font-weight: normal;
     font-size: 14px;
-    line-height: 17px;
+    line-height: 21px;
     color: rgba(0,0,0, 1);
     position: absolute;
     background-color: #FFFFFF;
     width: 21px;
     height: 21px;
     border-radius: 50%;
-    left:0;
+    left:4px;
     top: 50%;
     transform: translateY(-50%);
     text-align: center;
@@ -2082,13 +2101,41 @@ form .filter-page-header {
     outline: none;
 } 
 
-.range-toggle:focus-visible  ~ .range-wrapper-inputs > .catalog-filter-label { /*Не получается*/
+.toggle-min:focus-visible ~ .range-wrapper-inputs .catalog-filter-label:first-child {
     color: #AF4FFF;
-} 
+}
+
+.toggle-min:focus-visible ~ .range-wrapper-inputs > .catalog-filter-label:first-child > .range-input {
+    color: #AF4FFF;
+}
+
+.toggle-max:focus-visible ~ .range-wrapper-inputs .catalog-filter-label:last-child {
+    color: #AF4FFF;
+}
+
+.toggle-max:focus-visible ~ .range-wrapper-inputs > .catalog-filter-label:last-child > .range-input{
+    color: #AF4FFF;
+}
 
 .range-toggle:active {
     border: 2px solid #000000;
     background-color: #000000;
+}
+
+.toggle-min:active ~ .range-wrapper-inputs .catalog-filter-label:first-child {
+    color: rgba(0, 0, 0, 1);
+}
+
+.toggle-min:active ~ .range-wrapper-inputs > .catalog-filter-label:first-child > .range-input {
+    color: rgba(0, 0, 0, 1);
+}
+
+.toggle-max:active ~ .range-wrapper-inputs .catalog-filter-label:last-child {
+    color: rgba(0, 0, 0, 1);
+}
+
+.toggle-max:active ~ .range-wrapper-inputs > .catalog-filter-label:last-child > .range-input{
+    color:rgba(0, 0, 0, 1);
 }
 
 .toggle-min {
@@ -2103,10 +2150,14 @@ form .filter-page-header {
 
 .range-wrapper-inputs {
     display: flex;
+    position: absolute;
+    top: 10px;
+    left: -10px;
 }
   
   .catalog-filter-label {
     display: flex;
+    color: rgba(0, 0, 0, 0.3);
 }
   
   .range-input {
@@ -2118,6 +2169,7 @@ form .filter-page-header {
     background-color: transparent;
     border: none;
     appearance: textfield;
+    color: rgba(0, 0, 0, 0.3);
 }
   
   .range-input::-webkit-outer-spin-button,
@@ -2675,7 +2727,7 @@ form .filter-page-header {
   }
 
   
- 
+
 .modal-container-close {
       display: none;
   }
@@ -2753,6 +2805,7 @@ form .filter-page-header {
     font-size: 16px;
     line-height: 20px;
     padding-left: 20px;
+    padding-right: 20px;
     padding-top: 15px;
     padding-bottom: 15px;
     background-color: #F0F0F0;
