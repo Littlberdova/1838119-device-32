@@ -80,10 +80,14 @@ body {
 }
 
 .navigation-container {
-    padding-left: 60px;
-    padding-right: 59px;
+    padding-left: 44px;
+    padding-right: 30px;
     margin-top: -23px;
     margin-bottom: 23px;
+}
+
+.navigation-logo {
+    margin-left: 15px;
 }
 
 
@@ -92,8 +96,8 @@ body {
     flex-wrap: wrap;
     padding: 0;
     list-style-type: none;
-    padding-top: 35px;
-    padding-bottom: 44px;
+    padding-top: 21px;
+    padding-bottom: 28px;
     margin:0;
 }
 
@@ -124,6 +128,10 @@ body {
     margin-right: 14px;
 }
 
+.catalog-upper-navigation-list .compare {
+    margin-right: 11px;
+}
+
 .under-navigation-item {
     margin: 0;
     padding:0;
@@ -134,12 +142,12 @@ body {
     list-style-type: none;
     padding-top: 0;
     padding-left: 0;
-    padding-bottom: 152px;
+    padding-bottom: 137px;
     margin: 0;
 }
 
 .catalog-under-navigation-list {
-    padding-bottom: 53px;
+    padding-bottom: 22px;
 }
 
 .catalog {
@@ -148,11 +156,11 @@ body {
 }
 
 .delivery {
-    margin-right: 19px;
+    margin-right: -16px;
 }
 
 .garanty {
-    margin-right: 62px;
+    margin-right: 51px;
 }
 
 .product-slider {
@@ -212,14 +220,20 @@ body {
 
 .description {
     padding:0;
-    margin-top:19px;
-    margin-bottom: 30px;
+    margin-top:26px;
+    margin-bottom: 46px;
+}
+
+.metre-value {
+    padding-right: 56px;
+    padding-bottom: 8px;
 }
 
 .more-detailed {
+    width: 220px;
     display: inline-block;
     margin-top:0;
-    margin-bottom: 70px;
+    margin-bottom: 65px;
 }
 
 .slide-description {
@@ -241,16 +255,7 @@ body {
 }
 
 .features {
-    border-spacing: 20px 0;
-}
-
-.page-container {
-    display: flex;
-    justify-content: space-between;
-}
-
-.goods-catalog {
-    margin-bottom: 169px;
+    border-spacing: 0px;
 }
 
 .goods-catalog-list {
@@ -258,7 +263,7 @@ body {
     grid-template-columns: repeat(6,160px);
     gap: 40px;
     margin-top: 0;
-    margin-bottom: 139px;
+    margin-bottom: 194px;
     padding: 0;
     list-style-type: none;
 }
@@ -290,6 +295,12 @@ body {
     fill:rgba(54, 54, 54, 1);
 }
 
+.goods-catalog-item:nth-child(2) .navigation-icon {
+    top: 42px;
+    right:0;
+    left: 0;
+}
+
 .goods-catalog-item-link:first-child:hover {  
     background-color: #FFC700;
 }
@@ -317,15 +328,16 @@ body {
     grid-template-columns: 280px 814px;
     grid-template-areas: "section-switching service-slider";
     margin-bottom: 90px;
+    gap: 119px;
 }
 
 .section-switching {
     display: flex;
     flex-direction: column;
-    width: 280px;
+    width: 284px;
     padding: 0;
     margin: 0;
-    margin-top: -33px;
+    margin-top: -20px;
     list-style-type: none;
     grid-area: section-switching;
     position: relative;
@@ -342,7 +354,7 @@ body {
 }
 
 .switch-section-item:not(:last-child) {
-    margin-bottom: 44px;
+    margin-bottom: 22px;
 }
 
 .switch-slider-radio {
@@ -374,7 +386,6 @@ body {
     width: 814px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     display: none;
     margin-top: -30px;
 }
@@ -400,16 +411,24 @@ body {
 .slider-description {
     margin: 0;
     width: 497px;
+    height: 165px;
+    overflow: scroll;
+    text-overflow: ellipsis;
+}
+
+.slider-text {
+    margin-right: 63px;
 }
 
 .additional-services {
-    margin-bottom: 90px;
+    margin-bottom: 75px;
+    margin-top: -13px;
     background-color: #F0F0F0;
 }
 
 .section-header {
     margin-top: 0;
-    margin-bottom: 26px;
+    margin-bottom: 45px;
 }
 
 .paragraph-first {
@@ -419,13 +438,13 @@ body {
 
 .paragraph {
     margin-top:0;
-    margin-bottom: 60px;
+    margin-bottom: 67px;
 }
 
 .delivery-companies-list {
     padding: 0;
     margin-top:0;
-    margin-bottom: 95px;
+    margin-bottom: 61px;
     list-style-type: none;
 }
 
@@ -434,6 +453,10 @@ body {
     position: relative;
     font-weight: 700;
     color: #000000;
+}
+
+.delivery-company-item:not(:last-child) {
+    margin-bottom: 10px;
 }
 
 .delivery-company-item::before {
@@ -465,16 +488,12 @@ body {
 }
 
 .about-company {
-    padding-bottom: 87px;
+    padding-bottom: 76px;
 }
 
 .work-day-time {
     margin-top:0;
-    margin-bottom: 67px;
-}
-
-.write-to-us {
-    margin-top:0;
+    margin-bottom: 60px;
 }
 
 .about-us {
@@ -483,7 +502,7 @@ body {
     width: 560px;
     margin: 0;
     margin-right: 40px;
-    padding-top: 49px;
+    padding-top: 52px;
     padding-right: 63px;
     padding-left: 0;
     padding-bottom: 0;
@@ -492,10 +511,10 @@ body {
 .contacts {
     position: relative;
     box-sizing: border-box;
-    width: 560px;
+    width: 515px;
     margin:0;
     padding: 0;
-    padding-top: 49px;
+    padding-top: 52px;
 }
 
 .main-feature {
@@ -537,9 +556,8 @@ body {
 .subcribe-container {
     display: flex;
     flex-direction: row; 
-    justify-content: space-between;
     align-items: flex-end;
-    margin-bottom: 50px; 
+    margin-bottom: 61px; 
 }
 
 .form-container {
@@ -566,10 +584,11 @@ body {
 .subcribe-header {
     width: min-content;
     margin: 0;
+    margin-right: 251px;
 }
 
 .subcribe-description {
-    width: 560px;
+    width: 529px;
     margin: 0;
 }
 
@@ -582,7 +601,7 @@ body {
 
 .subcribe {
     background-color: #F0F0F0;
-    padding-top: 75px;
+    padding-top: 78px;
     padding-bottom: 131px;
 }
 
@@ -599,20 +618,20 @@ footer {
 .first-row {
     display: flex;
     flex-direction: row;
-    margin-bottom: 35px;
+    margin-bottom: 26px;
     width: auto;
 }
 
 .second-row {
     display:flex;
-    justify-content: space-between;
-    margin-bottom: 63px;
+    align-items: center;
+    margin-bottom: 45px;
 
 }
 
 .third-row {
     display: flex;
-    align-items: flex-end;
+    align-items: baseline;
 }
 
 .under-navigation-link {
@@ -629,6 +648,7 @@ footer {
     width: max-content;
     border: 2px solid transparent;
     box-sizing: border-box;
+    letter-spacing: 0.2em;
 }
 
 .catalog-link {
@@ -678,8 +698,12 @@ footer {
     line-height: 50px;
     color:#000000;
     padding: 0;
-    margin-top:0;
-    margin-bottom: 14px;
+    margin-bottom: 33px;
+    margin-top: 0px;
+}
+
+.information-container {
+    display: flex;
 }
 
 .goods-catalog-item-link {
@@ -690,6 +714,7 @@ footer {
     line-height: 24px;
     color:#000000;
     text-decoration: none;
+    letter-spacing: -0.02em;
 }
 
 .numerical-value {
@@ -805,6 +830,7 @@ address {
     background-repeat: no-repeat;
     width: 136px;
     height: 164px;
+    margin-top: 14px;
 }
 
 .garanty-item {
@@ -812,6 +838,7 @@ address {
     background-repeat: no-repeat;
     width: 171px;
     height: 195px;
+    margin-top: 14px;
 }
 
 .credit-item {
@@ -819,6 +846,7 @@ address {
     background-repeat: no-repeat;
     width: 156px;
     height: 188px;
+    margin-top: 14px;
 }
 
 .img:hover {
@@ -853,9 +881,9 @@ address {
 .more-information .navigation-icon {
     position: absolute;
     fill: rgba(0, 0, 0, 0.5);
-    top: 47px;
+    top: 43px;
     bottom: 45px;
-    right: 56px;
+    right: 52px;
 }
 
 .more-information::before {
@@ -863,8 +891,8 @@ address {
     content: '';
     background-color: #DCDCDC80;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     right: 33px;
     top: 29px;
     bottom: 31px;
@@ -883,21 +911,34 @@ footer {
     width: 239px;
     font-size: 16px;
     line-height: 19px;
+    margin-right: 122px;
+    position: relative;
+}
+
+.footer-address::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -75px;
+    width: 80px;
+    height: 7px;
+    background-color: #FFC700;
 }
 
 .additional-page-list {
     width: 458px;
     display: flex;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
     padding: 0;
     margin: 0;
     list-style-type: none;
+    margin-right: 171px;
 }
 
 .footer-contact-phone {
     width:auto;
     margin: 0;
-    padding: 5px 15px;
+    padding: 0;
     color: #FFFFFF;
     display: block;
     text-decoration: none;
@@ -909,7 +950,7 @@ footer {
 
 .additional-page-link {
     position: relative;
-    padding: 14px 20px;
+    padding: 0;
     font-family:"Raleway", sans-serif;
     letter-spacing: 0.2em;
     font-weight: 800;
@@ -933,15 +974,14 @@ footer {
     height: 2px;
     position: absolute;
     bottom: 0;
-    left:20px;
-    right: 20px;
+    left:0;
+    right: 0;
     background-color: rgba(255, 199, 0, 1);
 }
 
 .additional-page-link:focus-visible {
-    box-sizing: border-box;
-    outline: none;
-    border: 2px solid #AF4FFF;
+    outline: 2px solid #AF4FFF;
+    outline-offset: 14px;
     border-radius: 25px;
 }
 
@@ -955,6 +995,7 @@ footer {
 
 .additional-page-item {
     flex-shrink: 0; 
+    margin-right: 23px;
 }
 
 .additional-page-item:last-child {
@@ -964,8 +1005,8 @@ footer {
 .socialmedia-list {
     list-style-type: none;
     margin: 0;
-    margin-left:auto;
-    margin-right: 392px;
+    margin-left: 505px;
+    margin-right: 379px;
     display: flex;
     justify-content: center;
     padding: 0;
@@ -1019,16 +1060,16 @@ footer {
     line-height: 50px;
     color: #000000;
     margin-top: 0;
-    margin-bottom: 14px;
+    margin-bottom: 18px;
 }
 
 .links-onthepage-link {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 20px;
     color: #000000;
     opacity: 0.6;
     text-decoration: none;
-    padding-right: 17px;
+    padding-right: 19px;
 }
 
 .links-onthepage-item:not(:last-child) {
@@ -1065,7 +1106,7 @@ footer {
     color: #000000;
     margin: 0;
     padding-top: 71px;
-    padding-left: 60px; 
+    padding-left: 61px; 
     padding-right: 69px;
     background-color: #EBEBEB;
 
@@ -1088,6 +1129,7 @@ footer {
     width: 329px;
     box-sizing: border-box;
     background-color: #DCDCDC;
+    letter-spacing: 0.2em;
 }
 
 .sorting-header {
@@ -1095,8 +1137,8 @@ footer {
 }
 
 .sorting-form {
-    line-height: 19px;
-    margin-right: 290px; 
+    line-height: 9px;
+    margin-right: 311px; 
 }
 
 form .filter-page-header {
@@ -1110,14 +1152,25 @@ form .filter-page-header {
     font-size: 16px;
     line-height: 19px;
     color: #000000;
-    margin-bottom: 32px;
+}
+
+.catalog-filter-group:first-child .catalog-filter-title {
+    margin-bottom: 34px;
+}
+
+.catalog-filter-group:nth-child(2) .catalog-filter-title {
+    margin-bottom: 30px;
+}
+
+.catalog-filter-group:nth-child(3) .catalog-filter-title {
+    margin-bottom: 29px;
 }
 
 .catalog-filter-title::before {
     position: absolute;
     content:'';
     background-color: #000000;
-    width: 200px;
+    width: 196px;
     height: 2px;
     top:0;
 }
@@ -1153,6 +1206,11 @@ form .filter-page-header {
 .product-card-title {
     width: 280px;
     color: #000000;
+    font-size: 18px;
+    line-height: 24px;
+    margin-top: 36px;
+    margin-bottom: 0;
+    letter-spacing: -0.02em;
 }
 
 .product-card-image {
@@ -1186,8 +1244,13 @@ form .filter-page-header {
 }
 
 .login-name {
-    margin-left:auto;
+    margin-left:113px;
     position: relative;
+}
+
+.log-out {
+    margin-left:-16px;
+    margin-right: 4px;
 }
 
 .header-menu {
@@ -1197,7 +1260,7 @@ form .filter-page-header {
     justify-content: flex-start;
     margin: 0;
     padding-top: 37px;
-    padding-bottom: 49px;
+    padding-bottom: 46px;
     padding-left: 60px;
 }
 
@@ -1210,8 +1273,9 @@ form .filter-page-header {
 
 .sorting-section {
     display: flex;
-    padding-top: 25px;
-    padding-bottom: 25px;
+    flex-wrap: wrap;
+    padding-top: 21px;
+    padding-bottom: 15px;
     padding-left: 72px;
 }
 
@@ -1220,9 +1284,7 @@ form .filter-page-header {
 }
 
 .button-ascending {
-    margin-left: auto; 
-    width: 19px;
-    margin-right: 19px;
+    margin-right: 5px;
 }
 
 .button-ascending .navigation-icon { 
@@ -1240,10 +1302,6 @@ form .filter-page-header {
 
 .button-ascending:active .navigation-icon {
     fill:rgba(0, 0, 0, 1);
-}
-
-.button-descending {
-    width: 19px;
 }
 
 .button-descending:focus-visible {
@@ -1264,17 +1322,18 @@ form .filter-page-header {
 }
 
 .select-control {
-    margin-left: 52px;
+    margin-left: 28px;
     border: none;
     cursor: pointer;
     font: inherit;
     font-size: 16px;
+    line-height: 18px;
     background-color: transparent;
     appearance: none;
     padding-right: 41px;
     padding-left: 13px;
-    padding-top: 4px;
-    padding-bottom: 7px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     background-image: url("../img/open-select.svg");
     background-repeat: no-repeat;
     background-position: right 15px center;
@@ -1306,7 +1365,7 @@ form .filter-page-header {
 
 .product-cards-section {
     padding-top: 69px;
-    padding-bottom: 77px;
+    padding-bottom: 76px;
     padding-left: 72px;
 }
 
@@ -1332,18 +1391,18 @@ form .filter-page-header {
     font-family: "Raleway",sans-serif;
     font-weight: 800;
     font-size: 16px;
-    line-height: 19px;
+    line-height: 20px;
     text-transform: uppercase;
     text-align: center;
     cursor: pointer;
     display: inline-block;
-    padding-top: 18px;
-    padding-bottom: 18px;
+    padding-top: 12px;
+    padding-bottom: 17px;
     padding-left: 29px;
     padding-right: 30px;
     width: 760px;
-    margin-bottom: 51px;
-    margin-top: 44px;
+    margin-bottom: 50px;
+    margin-top: 47px;
     box-sizing: border-box;
     letter-spacing: 0.2em;
 }
@@ -1351,7 +1410,6 @@ form .filter-page-header {
 .page-pagination {
     position: relative;
     display: flex;
-    justify-content: space-between;
     width: 760px;
     height: 70px;
     margin: 0;
@@ -1365,7 +1423,7 @@ form .filter-page-header {
 }
 
 .pagination-item {
-    margin-right: 30px;
+    margin-right: 22px;
     flex-shrink: 0;
     width: 17px;
     text-align: center;
@@ -1373,7 +1431,7 @@ form .filter-page-header {
 
 .pagination-prev {
     display: block;
-    margin-right: auto;
+    margin-right: 267px;
     letter-spacing: 0.2em;
 }
 
@@ -1388,7 +1446,7 @@ form .filter-page-header {
     width: 127px;
     height: 70px;
     text-align: center;
-    padding-top: 27px;
+    padding-top: 24px;
     padding-bottom: 24px;
     box-sizing: border-box;
     top: 0;
@@ -1400,7 +1458,7 @@ form .filter-page-header {
 }
 
 .pagination-next-link {
-    right:0;
+    right: 7px;
 }
 
 .pagination-prev-link:hover,
@@ -1440,6 +1498,13 @@ form .filter-page-header {
     text-align: center;
     color:#000000;
     background: linear-gradient(to bottom, transparent 36%, #FFE17F 36% , #FFE17F 66%, transparent 66%, transparent 99%);
+}
+
+.switch-section-button {
+    min-width: unset;
+    width: 160px;
+    padding-top: 9px;
+    padding-bottom: 11px;
 }
 
 .switch-section-button:hover {  
@@ -1494,6 +1559,10 @@ form .filter-page-header {
     top: -20px;
 }
 
+.metre-value-slider3 {
+    padding-right: 71px;
+}
+
 .socialmedia-link {
     position: relative;
     display: block;
@@ -1528,6 +1597,11 @@ form .filter-page-header {
     left: 16px;
     margin: auto 0;
     transform: translateY(-50%);
+}
+
+.enter {
+    margin-left: 112px;
+    margin-right: 143px;
 }
 
 .enter .navigation-icon {
@@ -1606,7 +1680,11 @@ form .filter-page-header {
     justify-content: space-between;
     top: 50%;
     width: 100%;
-    transform: translateY(-140%);
+    transform: translateY(-90px);
+}
+
+.slider-controls-slider3 {
+    transform: translateY(-32px);
 }
 
 .slider-button {
@@ -1617,7 +1695,7 @@ form .filter-page-header {
     border-radius: 5px;
     display: block;
     cursor: pointer;
-    width: 40px;
+    width: 56px;
     height: 80px;
 }
 
@@ -1661,16 +1739,17 @@ form .filter-page-header {
     background-color: transparent;
     display: inline-block;
     cursor: pointer;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
+    padding: 0;
 }
 
 .follow-me::before{ 
    content: 'new'; 
    bottom: 293px;
    right: 27px;
-   left: 273px;
-   top: 27px;
+   left: 270px;
+   top: 29px;
    position: absolute;
    font-family: "Raleway",sans-serif;
    font-size: 14px;
@@ -1688,7 +1767,7 @@ form .filter-page-header {
    height: 60px;
 }
 
-.product-card:last-child {
+.product-card {
     position: relative;
 }
 
@@ -1797,8 +1876,8 @@ form .filter-page-header {
 }
 
 .footer-contact-phone:focus-visible {
-    border: 2px solid #AF4FFF;
-    outline: none;
+    outline: 2px solid #AF4FFF;
+    outline-offset: 5px;
     border-radius: 25px;
 }
 
@@ -1840,7 +1919,7 @@ form .filter-page-header {
     width: 360px;
     height: 380px;
     background-color: #F0F0F0CC;
-    padding: 180px 100px;
+    padding: 173px 88px;
     box-sizing: border-box;
     display: none;
 }
@@ -1867,6 +1946,12 @@ form .filter-page-header {
     text-align: center;
     color: #000000;
     background: linear-gradient(to bottom, transparent 36%, #FFE17F 36% , #FFE17F 66%, transparent 66%, transparent 99%);
+}
+
+.write-to-us {
+    margin-top:0;
+    padding-left: 35px;
+    padding-right: 29px;
 }
 
 .more-about-product:hover {
@@ -1921,8 +2006,7 @@ form .filter-page-header {
 
 .email-input {
     box-sizing: border-box;
-    padding-left: 0;
-    padding: 9px;
+    padding: 0;
     border: none;
     border-bottom: 3px solid rgba(0, 0, 0, 0.1);
     background-color: transparent;
@@ -1970,7 +2054,7 @@ form .filter-page-header {
     box-sizing: border-box;
     border: 2px solid transparent;
     border-radius: 20px;
-    padding-left: 52px;
+    padding-left: 50px;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-right: 10px;
@@ -2066,9 +2150,19 @@ form .filter-page-header {
     border: none;
     padding: 0;
     margin: 0;
-    margin-bottom: 46px;
     display: flex;
     flex-direction: column;
+}
+
+.catalog-filter-group:first-child {
+    margin-bottom: 52px;
+}
+
+.catalog-filter-group:nth-child(2) {
+    margin-bottom: 44px;
+}
+.catalog-filter-group:nth-child(3) {
+    margin-bottom: 46px;
 }
 
 .range-scale {
@@ -2083,6 +2177,8 @@ form .filter-page-header {
     position: absolute;
     height: 2px;
     background-color: #000000;
+    width: 110px;
+    left:6px;
 }
 
 .range-toggle {
@@ -2151,13 +2247,14 @@ form .filter-page-header {
 .range-wrapper-inputs {
     display: flex;
     position: absolute;
-    top: 10px;
-    left: -10px;
+    top: 18px;
+    left: -15px;
 }
   
   .catalog-filter-label {
     display: flex;
     color: rgba(0, 0, 0, 0.3);
+    margin-right: 14px;
 }
   
   .range-input {
@@ -2197,7 +2294,7 @@ form .filter-page-header {
 
 .plus {
     position: absolute;
-    transform: translateY(-14px);
+    transform: translate(-21px, -14px);
     background-color: transparent;
     border: 2px solid rgba(0, 0, 0, 0.5);
     border-radius: 50%;
@@ -2269,7 +2366,7 @@ form .filter-page-header {
 
 .description-navigation {
     position: absolute;
-    bottom: 200px;
+    bottom: 180px;
     right: 59px;
     z-index: 2;
 }
@@ -2298,7 +2395,7 @@ form .filter-page-header {
 .product-color {
     position: relative;
     display: block;
-    padding-left: 27px;
+    padding-left: 36px;
     cursor: pointer;
 }
 
@@ -2368,10 +2465,12 @@ form .filter-page-header {
 
 .control-input[type="checkbox"]:checked ~ .product-color .control-mark::before {
   position: absolute;
-  left: 2px;
+  left: 1px;
+  bottom: 2px;
   content: '\0041';
   display: inline-block;
   font-family: 'Glyphter';
+  font-size: 13px;
   font-style: normal;
   font-weight: normal;
   line-height: 1;
@@ -2382,7 +2481,7 @@ form .filter-page-header {
 .bluetooth-option {
     position: relative;
     display: block;
-    padding-left: 27px;
+    padding-left: 36px;
     cursor: pointer;
 }
 
@@ -2484,10 +2583,13 @@ form .filter-page-header {
     line-height: 20px;
     color: #FFFFFF;
     min-height: 218px;
-    right: -82px;
-    top: 43px;
+    right: -55px;
+    top: 40px;
     z-index: 4;
+    box-shadow: 0 10px 0 0 #EBEBEB;
 }
+
+
 
 .popover::before {
     content:'';
@@ -2536,7 +2638,7 @@ form .filter-page-header {
 
 .cart-item-title {
     margin: 0;
-    width: 180px;
+    width: 172px;
 }
 
 .cart-item-button {
@@ -2599,14 +2701,14 @@ form .filter-page-header {
 
 .total-price-container {
     background-color: #1A1A1A;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 13px;
+    padding-bottom: 13px;
     padding-left:20px;
     padding-right:20px;
     display: grid;
     grid-template-columns: repeat(2,auto);
     row-gap: 10px;
-    margin-top: 20px;
+    margin-top: 19px;
 }
 
 .item-amount,
@@ -2634,7 +2736,7 @@ form .filter-page-header {
     text-transform: uppercase;
     letter-spacing: 0.2em;
     color: #000000;
-    margin-top: 35px;
+    margin-top: 18px;
     margin-left: 20px;
     margin-right: 20px;
 }
@@ -2655,15 +2757,16 @@ form .filter-page-header {
 
 .sub-directory-popover {
     display: flex;
-    padding-top: 33px;
-    padding-bottom:  27px;
+    flex-wrap: wrap;
+    padding-top: 29px;
+    padding-bottom: 51px;
     position: absolute;
     background-color: #FFE17F;
     width: 1160px;
     position: absolute;
-    left:-60px;
-    top: 42px;
-    padding-left: 61px;
+    left:-44px;
+    top: 38px;
+    padding-left: 44px;
     padding-right: 59px;
     box-sizing: border-box;
     z-index: 3;
@@ -2678,9 +2781,14 @@ form .filter-page-header {
     width: 210px;
     list-style-type: none;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: flex-start;
 
+}
+
+.sub-directory-list:nth-child(2) {
+    margin-right: -9px;
 }
 
 .sub-directory-item-link {
@@ -2712,7 +2820,7 @@ form .filter-page-header {
 }
 
 .sub-directory-item:not(:last-child) {
-    margin-bottom: 15px;
+    margin-bottom: 9px;
 }
 
 .modal-container {
@@ -2735,16 +2843,19 @@ form .filter-page-header {
 .modal {
     position: relative;
     margin: auto;
-    padding-top: 72px;
+    padding-top: 66px;
     padding-bottom: 88px;
-    padding-left: 80px;
+    padding-left: 72px;
     padding-right: 80px;
     background-color: #FFFFFF;
     border: 10px solid #000000;
   } 
 
 .modal-delivery {
-    width: 900px;
+    width: 923px;
+    height: 580px;
+    box-shadow: 0 10px 0 0 #EBEBEB;
+    box-sizing: border-box;
 }
 
 .modal-close-button {
@@ -2754,7 +2865,8 @@ form .filter-page-header {
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    right: 80px;
+    right: 60px;
+    top:71px;
 }
 
 .modal-close-button .navigation-icon {
@@ -2781,7 +2893,7 @@ form .filter-page-header {
     line-height: 50px;
     color: #000000;
     margin: 0;
-    margin-bottom: 58px;
+    margin-bottom: 69px;
 }
 
 .field-group {
@@ -2797,7 +2909,6 @@ form .filter-page-header {
 
 .field-group-row {
     display: flex;
-    justify-content: space-between;
 }
 
 .field {
@@ -2806,8 +2917,8 @@ form .filter-page-header {
     line-height: 20px;
     padding-left: 20px;
     padding-right: 20px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     background-color: #F0F0F0;
     border: none; 
     width: 100%;
@@ -2821,17 +2932,18 @@ form .filter-page-header {
     margin-bottom: 10px;
 }
 
-.field-group-row:first-child .field-group {
-    width: 360px;
+.field-group-row:first-child {
+    margin-bottom: 2px;
 }
 
-.field-group-row:first-child {
-    margin-bottom: 40px;
+.delivery-item-group label,
+.amount-item-group label {
+    margin-bottom: 13px;
 }
 
 .delivery-form .submit-button {
     align-self: flex-start;
-    margin-top: 54px;
+    margin-top: 49px;
 }
 
 .delivery-item-group {
@@ -2839,11 +2951,17 @@ form .filter-page-header {
     margin-right: 40px;
 }
 
+.delivery-item-group .field {
+    width: 561px;
+}
+
 .name-field {
     background-image: url(../img/input-name.svg);
     background-repeat: no-repeat;
     background-position: right 24px center;
     padding-right: 37px;
+    width: 362px;
+    
 }
 
 .email-field {
@@ -2851,6 +2969,7 @@ form .filter-page-header {
     background-repeat: no-repeat;
     background-position: right 24px center;
     padding-right: 39px;
+    width: 361px;
 }
 
 .amount-label {
@@ -2949,6 +3068,7 @@ form .filter-page-header {
 
 .amount-field {
     text-align: center;
+    width: 161px;
 }
 
 .popover-delivery-form {
@@ -2992,7 +3112,7 @@ form .filter-page-header {
     content: 'Забавный у вас адрес';
     color: #000000;
     position: absolute;
-    bottom: 0;
+    bottom: 7px;
     font-size: 14px;
     line-height: 30px;
 }
@@ -3007,14 +3127,15 @@ form .filter-page-header {
     content: 'Пожалуйста, представьтесь';
     color: #000000;
     position: absolute;
-    bottom: 0;
+    bottom: 7px;
     font-size: 14px;
     line-height: 30px;
 }
 
 .name-field-group {
     position: relative;
-    padding-bottom: 30px;
+    padding-bottom: 40px;
+    margin-right: 38px;
 }
 
 .service-input[type="radio"]:not(:checked) .option-name {
